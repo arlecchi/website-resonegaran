@@ -1,7 +1,9 @@
 "use client"
 
 import { ArrowUpRight, MapPin, Navigation } from "lucide-react"
-import { mapLinks, places, VILLAGE } from "@/lib/places"
+import { mapLinks, usePlaces, VILLAGE } from "@/lib/places"
+import { useContent } from "@/lib/i18n"
+import { mapContent } from "@/content/map"
 
 type Props = {
   selected: string | null // slug of the highlighted place, or null for "whole village"
@@ -9,6 +11,9 @@ type Props = {
 }
 
 export function VillageMap({ selected, onSelect }: Props) {
+  const t = useContent(mapContent) // text for this page → edit in content/map.ts
+  const places = usePlaces()
+
   // Work out what the map should centre on.
   const place = places.find((p) => p.slug === selected)
   const target = place ?? VILLAGE
@@ -22,7 +27,7 @@ export function VillageMap({ selected, onSelect }: Props) {
         {/* Changing `src` makes the iframe reload at the new spot. */}
         <iframe
           src={embedSrc}
-          title={`Map of ${place?.name ?? VILLAGE.name}`}
+          title={`${t.mapOf} ${place?.name ?? VILLAGE.name}`}
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           allowFullScreen
@@ -30,14 +35,14 @@ export function VillageMap({ selected, onSelect }: Props) {
       </div>
 
       <aside className="map-aside">
-        <span className="eyebrow">PLACES ON THE MAP</span>
+        <span className="eyebrow">{t.listTitle}</span>
 
         <ol className="map-list">
           <li>
             <button className={selected === null ? "active" : ""} onClick={() => onSelect(null)}>
               <span>★</span>
-              <b>Kampung Resonegaran</b>
-              <small>Overview</small>
+              <b>{t.villageName}</b>
+              <small>{t.overview}</small>
             </button>
           </li>
           {places.map((p, i) => (
@@ -55,17 +60,17 @@ export function VillageMap({ selected, onSelect }: Props) {
           <MapPin size={16} />
           <span>
             <b>{place?.name ?? VILLAGE.name}</b>
-            <small>{place ? `${place.type} · best ${place.time.toLowerCase()}` : VILLAGE.area}</small>
+            <small>{place ? `${place.type} · ${t.best} ${place.time.toLowerCase()}` : VILLAGE.area}</small>
           </span>
         </div>
 
         <a className="button dark-button full-button" href={directionsUrl} target="_blank" rel="noopener noreferrer">
-          Get directions <Navigation size={16} />
+          {t.directions} <Navigation size={16} />
         </a>
         <a className="under-link" href={openUrl} target="_blank" rel="noopener noreferrer">
-          Open in Google Maps <ArrowUpRight size={15} />
+          {t.openInMaps} <ArrowUpRight size={15} />
         </a>
-        <small className="map-note">Pin locations are placeholders · to be confirmed</small>
+        <small className="map-note">{t.note}</small>
       </aside>
     </div>
   )

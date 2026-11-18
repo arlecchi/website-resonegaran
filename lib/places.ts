@@ -1,14 +1,16 @@
-// Single source of truth for the places shown on the site.
-// The Places, Map and Tour plans pages (and the home page preview) all read from here,
-// so adding or editing a place only has to happen in this file.
+// Single source of truth for WHERE the places are (photo + coordinates).
+// The Places, Map and Tour plans pages (and the home page preview) all read from here.
+// The place NAMES and DESCRIPTIONS (English + Indonesian) live in content/places.ts.
 
-export type Place = {
-  slug: string // short unique id, used to tell the map which place is selected
-  name: string
-  type: string
-  time: string
+import { placesContent } from "@/content/places"
+import { useContent } from "@/lib/i18n"
+
+// The slug must also exist under `places:` in content/places.ts — TypeScript will complain if it doesn't.
+export type PlaceSlug = keyof typeof placesContent.en.places
+
+type PlaceLocation = {
+  slug: PlaceSlug // short unique id, used to tell the map which place is selected
   image: string // Unsplash photo id, turned into a full URL by img() in app/page.tsx
-  desc: string
   lat: number // latitude  (negative = south of the equator)
   lng: number // longitude
 }
@@ -22,7 +24,7 @@ export const VILLAGE = {
   name: "Resonegaran",
   area: "Yogyakarta, Indonesia",
   lat: -7.779748, // Depan Pak budi
-  lng: 110.375693, 
+  lng: 110.375693,
 }
 
 // Builds the three Google Maps links for a point. Used by the Map page and the "Find us" block.
@@ -36,36 +38,31 @@ export function mapLinks(lat: number, lng: number, zoom = 15) {
   }
 }
 
-export const places: Place[] = [
+const locations: PlaceLocation[] = [
   {
     slug: "village-lanes",
-    name: "The village lanes",
-    type: "Village life",
-    time: "Anytime",
     image: "photo-1518005020951-eccb494ad742",
-    desc: "Wander through quiet lanes framed by old trees, friendly homes, and the everyday rhythm of Resonegaran.",
     lat: -7.779748, // Depan Pak Budi
-    lng: 110.375693, 
-
+    lng: 110.375693,
   },
   {
     slug: "rice-fields",
-    name: "Green rice fields",
-    type: "Nature",
-    time: "Early morning",
     image: "photo-1500382017468-9049fed747ef",
-    desc: "Follow the footpaths between emerald paddies and watch the light change across the fields.",
     lat: -7.8015, // placeholder
     lng: 110.3689, // placeholder
   },
   {
     slug: "gathering-space",
-    name: "Local gathering space",
-    type: "Culture",
-    time: "Late afternoon",
     image: "photo-1518998053901-5348d3961a04",
-    desc: "Meet the community and discover the small traditions that make a visit feel personal.",
     lat: -7.8004, // placeholder
     lng: 110.3641, // placeholder
   },
 ]
+
+/** All places, with name/type/time/desc in the language the visitor picked. */
+export function usePlaces() {
+  const text = useContent(placesContent).places
+  return locations.map((loc) => ({ ...loc, ...text[loc.slug] }))
+}
+
+export type Place = ReturnType<typeof usePlaces>[number]
