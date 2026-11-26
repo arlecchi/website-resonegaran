@@ -1,71 +1,55 @@
-// Page 01 — Profile (the home page).
-// `en` = English, `id` = Bahasa Indonesia. Both must have the same fields.
-// Formatting: "\n" = line break, "*word*" = coloured italic. (See TRANSLATING.md)
-
+// Page 01 — Profile (the home page), English and Bahasa Indonesia.
 import { defineContent } from "@/lib/i18n"
 
 export const profile = defineContent({
   en: {
-    // Big photo at the top
-    heroEyebrow: "A SMALL PLACE WITH A BIG HEART",
-    heroTitle: "Come for the\n*quiet.* Stay for\nthe stories.",
-    heroText: "Find your slower side in Resonegaran — a welcoming village tucked into the green heart of Yogyakarta.",
-    heroExplore: "Explore the village",
-    heroAbout: "A little about us",
-    heroCaption: "RESONEGARAN, YOGYAKARTA",
-
-    // "Not a landmark" section
-    introKicker: "A PLACE TO PAUSE",
-    introLabel: "01 — PROFILE",
-    introTitle: "Not a landmark.\n*A feeling.*",
-    introText: "Resonegaran is the kind of place you discover by slowing down. A village of open skies, familiar faces, and paths that invite you to wander a little further.",
-    introMuted: "Come curious. Leave feeling like you know the way back.",
-    introLink: "Get to know Resonegaran",
-
-    // Photo + text band
-    featureEyebrow: "A DIFFERENT KIND OF GETAWAY",
-    featureTitle: "Let the day\nunfold *naturally.*",
-    featureText: "No packed itinerary required. Just open roads, a warm welcome, and room to see where the day takes you.",
-    featureButton: "Find your kind of day",
-
-    // Places preview (the place names come from content/places.ts)
-    previewKicker: "A FEW PLACES TO BEGIN",
-    previewLabel: "02 — PLACES",
-    previewTitle: "Little moments.\n*Lovely places.*",
-    previewSeeAll: "See all places",
-
-    // Dark strip before the footer
-    journalEyebrow: "A LITTLE SOMETHING TO REMEMBER",
-    journalTitle: "Leave room for\n*the unexpected.*",
-    journalButton: "Read our field notes",
+    heroEyebrow: "THREE STORIES. ONE NEIGHBORHOOD.",
+    heroTitle: "Meet Resonegaran through\n*heritage, culture & wellness.*",
+    heroText: "In Terban, Yogyakarta, a heritage walk, a batik workshop, and traditional jamu knowledge come together in one community-rooted visit.",
+    heroExplore: "Explore the destinations",
+    heroAbout: "The story behind them",
+    heroCaption: "KAMPUNG RESONEGARAN · TERBAN · YOGYAKARTA",
+    introKicker: "A CONNECTED EXPERIENCE",
+    introLabel: "HERITAGE · CULTURE · WELLNESS",
+    introTitle: "Three local strengths.\n*One thoughtful route.*",
+    introText: "Start with the history of Museum TNI AD Dharma Wiratama, meet batik makers at Sekar Rinonce, then learn about the jamu tradition connected to Prof. Sardjito’s home.",
+    introMuted: "The experiences are hosted by different partners, so visits need to be arranged ahead of time.",
+    introLink: "See the visitor notes",
+    featureEyebrow: "A WALK THROUGH RESONEGARAN",
+    featureTitle: "History lives\nalong the *way.*",
+    featureText: "The proposed heritage walk links local heritage buildings and the three anchor destinations on a route of about 1.4 km. Take it with a local guide and leave time to listen.",
+    featureButton: "Explore tour plans",
+    previewKicker: "THE THREE ANCHOR DESTINATIONS",
+    previewLabel: "HERITAGE · CULTURE · WELLNESS",
+    previewTitle: "Meet the places\n*behind the story.*",
+    previewSeeAll: "See all destinations",
+    journalEyebrow: "A COMMUNITY-ROOTED VISIT",
+    journalTitle: "Come curious.\n*Travel with care.*",
+    journalButton: "Read the field notes",
   },
   id: {
-    heroEyebrow: "TEMPAT KECIL DENGAN HATI YANG BESAR",
-    heroTitle: "Datang untuk\n*ketenangan.* Tinggal\nkarena ceritanya.",
-    heroText: "Temukan sisi santaimu di Resonegaran — kampung ramah yang terselip di jantung hijau Yogyakarta.",
-    heroExplore: "Jelajahi kampung",
-    heroAbout: "Sedikit tentang kami",
-    heroCaption: "RESONEGARAN, YOGYAKARTA",
-
-    introKicker: "TEMPAT UNTUK REHAT",
-    introLabel: "01 — PROFIL",
-    introTitle: "Bukan sekadar tempat.\n*Sebuah rasa.*",
-    introText: "Resonegaran adalah tempat yang kamu temukan saat melambat. Kampung dengan langit terbuka, wajah-wajah yang akrab, dan jalan-jalan kecil yang mengajakmu melangkah sedikit lebih jauh.",
-    introMuted: "Datanglah dengan rasa ingin tahu. Pulanglah dengan merasa tahu jalan kembali.",
-    introLink: "Kenali Resonegaran",
-
-    featureEyebrow: "LIBURAN DENGAN CARA BERBEDA",
-    featureTitle: "Biarkan hari\nmengalir *apa adanya.*",
-    featureText: "Tak perlu jadwal yang padat. Cukup jalan terbuka, sambutan hangat, dan ruang untuk melihat ke mana hari membawamu.",
-    featureButton: "Temukan harimu",
-
-    previewKicker: "BEBERAPA TEMPAT UNTUK MEMULAI",
-    previewLabel: "02 — TEMPAT",
-    previewTitle: "Momen kecil.\n*Tempat yang indah.*",
-    previewSeeAll: "Lihat semua tempat",
-
-    journalEyebrow: "SESUATU UNTUK DIKENANG",
-    journalTitle: "Sisakan ruang untuk\n*hal tak terduga.*",
-    journalButton: "Baca catatan lapangan kami",
+    heroEyebrow: "TIGA KISAH. SATU KAWASAN.",
+    heroTitle: "Kenali Resonegaran lewat\n*warisan, budaya & kesehatan.*",
+    heroText: "Di Terban, Yogyakarta, wisata jalan kaki bersejarah, lokakarya batik, dan pengetahuan jamu tradisional dirangkai dalam kunjungan yang berakar pada masyarakat.",
+    heroExplore: "Jelajahi destinasi",
+    heroAbout: "Kisah di baliknya",
+    heroCaption: "KAMPUNG RESONEGARAN · TERBAN · YOGYAKARTA",
+    introKicker: "PENGALAMAN YANG TERHUBUNG",
+    introLabel: "WARISAN · BUDAYA · KESEHATAN",
+    introTitle: "Tiga potensi lokal.\n*Satu rute bermakna.*",
+    introText: "Awali dengan sejarah Museum TNI AD Dharma Wiratama, bertemu perajin batik di Sekar Rinonce, lalu mengenal tradisi jamu yang terhubung dengan rumah Prof. Sardjito.",
+    introMuted: "Setiap pengalaman dikelola mitra yang berbeda, jadi kunjungan perlu diatur sebelumnya.",
+    introLink: "Baca catatan kunjungan",
+    featureEyebrow: "MENYUSURI RESONEGARAN",
+    featureTitle: "Sejarah hidup\ndi sepanjang *jalan.*",
+    featureText: "Rancangan heritage walk menghubungkan bangunan bersejarah dan tiga destinasi utama dalam rute sekitar 1,4 km. Jelajahi bersama pemandu lokal dan luangkan waktu untuk mendengarkan cerita.",
+    featureButton: "Lihat rencana tur",
+    previewKicker: "TIGA DESTINASI UTAMA",
+    previewLabel: "WARISAN · BUDAYA · KESEHATAN",
+    previewTitle: "Kenali tempat\n*di balik kisahnya.*",
+    previewSeeAll: "Lihat semua destinasi",
+    journalEyebrow: "KUNJUNGAN YANG BERAKAR PADA MASYARAKAT",
+    journalTitle: "Datang dengan rasa ingin tahu.\n*Jelajahi dengan santun.*",
+    journalButton: "Baca catatan lapangan",
   },
 })

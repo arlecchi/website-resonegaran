@@ -1,127 +1,101 @@
-// Page 05 — Information & history.
-// `en` = English, `id` = Bahasa Indonesia. Both must have the same fields.
-// Formatting: "\n" = line break, "*word*" = coloured italic. (See TRANSLATING.md)
-// Anything marked TODO is a placeholder waiting for real info from fieldwork / interviews.
-// The layout lives in components/info-history.tsx.
-
+// Page 05 — Information & history. English and Indonesian fields stay in sync.
 import { defineContent } from "@/lib/i18n"
 
 export const info = defineContent({
   en: {
     kicker: "THE PLACE, THE PEOPLE",
-    title: "A story still\n*being told.*",
-    lead: "Resonegaran's story lives in its people, its shared spaces, and the landscape that shapes daily life.",
-
-    // 1. Intro — photo + a few paragraphs
+    title: "A neighborhood\n*with many layers.*",
+    lead: "Resonegaran is one of four kampung in Terban, Gondokusuman. Its proposed visitor route brings together built heritage, batik craftsmanship, and traditional jamu knowledge.",
     intro: {
-      eyebrow: "ROOTED IN COMMUNITY",
-      title: "Every place has\na *before and after.*",
+      eyebrow: "HERITAGE · CULTURE · WELLNESS",
+      title: "Three perspectives.\n*One local story.*",
       paragraphs: [
-        "Resonegaran is part of the wider Yogyakarta region, where village life and a deep sense of community are woven into the everyday. Here, the best way to understand a place is often the simplest: walk, listen, and meet the people who call it home.",
-        "Stories and traditions are shared person to person. We’re still gathering more of Resonegaran’s local history — and we invite you to learn with care and curiosity.",
+        "Resonegaran sits within Kelurahan Terban, Kemantren Gondokusuman, in Yogyakarta City. The KKN-PPM UGM 2026 proposal presents it as an urban heritage destination, with historic buildings, community traditions, and local creative businesses as part of its character.",
+        "The proposed experience connects Museum TNI AD Dharma Wiratama, Batik Sekar Rinonce, and the Prof. Sardjito house and jamu enterprise. Each stop has a different host and access conditions, so the route should be arranged with partners in advance.",
       ],
-      quote: "The heart of a village is found in the people who welcome you.",
-      link: "Read stories from the village",
+      quote: "A good visit helps keep local stories, skills, and places valued by the people who care for them.",
+      link: "Read the field notes",
     },
-
-    // 2. Timeline. Keep each entry to 1–2 sentences.
-    // `year` can be a year, a decade ("1950s") or an era ("Long ago").
-    timelineEyebrow: "A SHORT HISTORY",
-    timelineTitle: "How Resonegaran\n*came to be.*",
+    timelineEyebrow: "A FEW HISTORIC THREADS",
+    timelineTitle: "History across\n*the neighborhood.*",
     timeline: [
-      { year: "TODO", title: "Where the name comes from", text: "Placeholder — the origin of the name “Resonegaran”, as told by village elders." },
-      { year: "TODO", title: "The first families settle", text: "Placeholder — how and when the kampung first formed." },
-      { year: "TODO", title: "A turning point", text: "Placeholder — an important event, change, or landmark in the village’s story." },
-      { year: "Today", title: "A village that welcomes visitors", text: "Placeholder — what Resonegaran is known for now, and the community behind it." },
+      { year: "1904", title: "A heritage building takes shape", text: "The building now used by Museum TNI AD Dharma Wiratama was built as a residence for a colonial-era plantation administrator." },
+      { year: "1945", title: "A headquarters in the independence era", text: "After independence, the building was used as a headquarters by the People’s Security Army (TKR), before later military and museum uses." },
+      { year: "1949–1961", title: "Prof. Sardjito leads UGM", text: "Prof. Dr. Sardjito became Universitas Gadjah Mada’s first rector. His former home and a family jamu enterprise are among the heritage stories connected to Terban." },
+      { year: "Today", title: "A proposed heritage, culture & wellness route", text: "The 2026 KKN-PPM UGM proposal links a museum visit, a batik workshop, and a jamu introduction in a community-rooted itinerary." },
     ],
-
-    // 3. "Good to know" cards. Don't rename the keys (gettingHere, …) — they pick the icon.
-    practicalEyebrow: "BEFORE YOU COME",
+    practicalEyebrow: "PLAN WITH THE HOSTS",
     practicalTitle: "Good *to know.*",
     practical: {
-      gettingHere: { title: "Getting here", text: "TODO — route and travel time from Tugu Station / Malioboro, and which transport works best." },
-      bestTime: { title: "Best time to visit", text: "TODO — best season and time of day, plus any regular events worth timing a visit around." },
-      hours: { title: "Visiting hours", text: "TODO — when visitors are welcome, and whether tours need to be booked ahead." },
-      parking: { title: "Parking & facilities", text: "TODO — where to park, toilets, places to eat, and accessibility notes." },
+      gettingHere: { title: "Where to start", text: "Resonegaran is in Terban, Gondokusuman, Yogyakarta. The proposal’s anchor addresses include Museum TNI AD at Jl. Jenderal Sudirman No. 75 and the Sardjito house at Jl. Cik Di Tiro No. 16. Confirm your meeting point with the tour organizer." },
+      bestTime: { title: "Museum visit", text: "The museum’s current website lists Tuesday–Sunday, 08:00–15:00. It says group tours must be reserved in advance; check again before traveling." },
+      hours: { title: "Batik & jamu visits", text: "Arrange Batik Sekar Rinonce in advance. Visits to the Sardjito residence or jamu activity depend on permission and availability from the host; it is not a walk-in attraction." },
+      parking: { title: "Walking route", text: "The proposal outlines a heritage walk of about 1.4 km. Ask the organizer about parking, accessibility, rest stops, and the exact route for your group." },
     },
-
-    // 4. Find us (the actual address/phone/email are in `contact` at the bottom of this file)
     findEyebrow: "LOCATION & CONTACT",
-    findTitle: "Find *us.*",
+    findTitle: "Find *Resonegaran.*",
     mapTitle: "Map of Resonegaran",
-    addressLabel: "Address",
+    addressLabel: "Area",
     emailLabel: "Email",
     toBeAdded: "to be added",
     socialsEmpty: "Social media links to be added",
     directions: "Get directions",
-    seeMap: "See all places on the map",
-
-    // 5. Etiquette
+    seeMap: "See the destinations on the map",
     etiquetteEyebrow: "A GOOD GUEST",
     etiquetteTitle: "Travel gently.",
-    etiquetteText: "Ask before taking photos, respect private spaces, and support locally owned businesses when you can. A little kindness goes a long way.",
+    etiquetteText: "These stops are hosted by different partners. Confirm permission, schedule, and the meeting point before you visit. Ask before taking photos, respect private spaces, and avoid treating traditional jamu as medical advice.",
   },
   id: {
     kicker: "TEMPAT DAN WARGANYA",
-    title: "Kisah yang masih\n*terus ditulis.*",
-    lead: "Kisah Resonegaran hidup dalam warganya, ruang-ruang bersamanya, dan alam yang membentuk keseharian.",
-
+    title: "Kawasan dengan\n*banyak lapisan kisah.*",
+    lead: "Resonegaran adalah salah satu dari empat kampung di Terban, Gondokusuman. Rute wisata yang dirancang menghubungkan warisan bangunan, kerajinan batik, dan pengetahuan jamu tradisional.",
     intro: {
-      eyebrow: "BERAKAR PADA KEBERSAMAAN",
-      title: "Setiap tempat punya\n*masa lalu dan masa kini.*",
+      eyebrow: "WARISAN · BUDAYA · KESEHATAN",
+      title: "Tiga sudut pandang.\n*Satu kisah lokal.*",
       paragraphs: [
-        "Resonegaran adalah bagian dari wilayah Yogyakarta, tempat kehidupan kampung dan rasa kebersamaan yang kuat menyatu dalam keseharian. Di sini, cara terbaik untuk mengenal sebuah tempat sering kali yang paling sederhana: berjalan, mendengarkan, dan bertemu dengan warganya.",
-        "Cerita dan tradisi diwariskan dari orang ke orang. Kami masih mengumpulkan lebih banyak sejarah Resonegaran — dan kami mengajakmu untuk mengenalnya dengan penuh hormat dan rasa ingin tahu.",
+        "Resonegaran berada di Kelurahan Terban, Kemantren Gondokusuman, Kota Yogyakarta. Proposal KKN-PPM UGM 2026 menggambarkannya sebagai destinasi heritage perkotaan dengan bangunan bersejarah, tradisi masyarakat, dan usaha kreatif lokal sebagai bagian dari karakternya.",
+        "Pengalaman yang dirancang menghubungkan Museum TNI AD Dharma Wiratama, Batik Sekar Rinonce, serta rumah Prof. Sardjito dan usaha jamu. Setiap tempat dikelola tuan rumah berbeda dan memiliki ketentuan akses masing-masing, jadi rute perlu diatur bersama mitra sebelumnya.",
       ],
-      quote: "Jantung sebuah kampung ada pada warga yang menyambutmu.",
-      link: "Baca cerita dari kampung",
+      quote: "Kunjungan yang baik ikut menjaga agar kisah, keterampilan, dan tempat lokal tetap dihargai oleh orang-orang yang merawatnya.",
+      link: "Baca catatan lapangan",
     },
-
-    timelineEyebrow: "SEJARAH SINGKAT",
-    timelineTitle: "Bagaimana Resonegaran\n*bermula.*",
+    timelineEyebrow: "BEBERAPA JEJAK SEJARAH",
+    timelineTitle: "Sejarah yang terjalin\n*di kawasan ini.*",
     timeline: [
-      { year: "TODO", title: "Asal-usul nama", text: "Sementara — asal-usul nama “Resonegaran”, seperti yang diceritakan para sesepuh kampung." },
-      { year: "TODO", title: "Keluarga pertama menetap", text: "Sementara — bagaimana dan kapan kampung ini pertama kali terbentuk." },
-      { year: "TODO", title: "Titik balik", text: "Sementara — peristiwa, perubahan, atau tengara penting dalam kisah kampung." },
-      { year: "Kini", title: "Kampung yang menyambut wisatawan", text: "Sementara — apa yang dikenal dari Resonegaran saat ini, dan komunitas di baliknya." },
+      { year: "1904", title: "Bangunan bersejarah berdiri", text: "Gedung yang kini digunakan Museum TNI AD Dharma Wiratama dibangun sebagai rumah pejabat administratur perkebunan pada masa kolonial." },
+      { year: "1945", title: "Markas pada masa kemerdekaan", text: "Setelah kemerdekaan, gedung ini digunakan sebagai markas Tentara Keamanan Rakyat (TKR), sebelum kemudian menjadi markas militer dan museum." },
+      { year: "1949–1961", title: "Prof. Sardjito memimpin UGM", text: "Prof. Dr. Sardjito menjadi rektor pertama Universitas Gadjah Mada. Rumah yang pernah beliau tinggali dan usaha jamu keluarga termasuk dalam kisah heritage yang terhubung dengan Terban." },
+      { year: "Kini", title: "Rancangan rute heritage, budaya & wellness", text: "Proposal KKN-PPM UGM 2026 menghubungkan kunjungan museum, lokakarya batik, dan pengenalan jamu dalam itinerary berbasis masyarakat." },
     ],
-
-    practicalEyebrow: "SEBELUM BERKUNJUNG",
+    practicalEyebrow: "RENCANAKAN BERSAMA TUAN RUMAH",
     practicalTitle: "Perlu *diketahui.*",
     practical: {
-      gettingHere: { title: "Menuju ke sini", text: "TODO — rute dan waktu tempuh dari Stasiun Tugu / Malioboro, serta transportasi yang paling cocok." },
-      bestTime: { title: "Waktu terbaik berkunjung", text: "TODO — musim dan waktu terbaik, serta acara rutin yang layak dijadikan waktu berkunjung." },
-      hours: { title: "Jam kunjungan", text: "TODO — kapan wisatawan dipersilakan datang, dan apakah tur perlu dipesan terlebih dahulu." },
-      parking: { title: "Parkir & fasilitas", text: "TODO — tempat parkir, toilet, tempat makan, dan catatan aksesibilitas." },
+      gettingHere: { title: "Titik awal", text: "Resonegaran berada di Terban, Gondokusuman, Yogyakarta. Alamat destinasi utama dalam proposal mencakup Museum TNI AD di Jl. Jenderal Sudirman No. 75 dan rumah Sardjito di Jl. Cik Di Tiro No. 16. Pastikan titik temu kepada pengelola tur." },
+      bestTime: { title: "Kunjungan museum", text: "Situs resmi museum saat ini mencantumkan Selasa–Minggu, pukul 08.00–15.00. Rombongan wajib reservasi; periksa kembali sebelum berangkat." },
+      hours: { title: "Kunjungan batik & jamu", text: "Atur kunjungan ke Batik Sekar Rinonce sebelumnya. Kunjungan ke rumah Sardjito atau kegiatan jamu bergantung pada izin dan ketersediaan tuan rumah; tempat ini bukan destinasi kunjungan langsung." },
+      parking: { title: "Rute berjalan kaki", text: "Proposal merancang heritage walk sekitar 1,4 km. Tanyakan kepada pengelola mengenai parkir, aksesibilitas, tempat istirahat, dan rute tepat untuk rombonganmu." },
     },
-
     findEyebrow: "LOKASI & KONTAK",
-    findTitle: "Temukan *kami.*",
+    findTitle: "Temukan *Resonegaran.*",
     mapTitle: "Peta Resonegaran",
-    addressLabel: "Alamat",
+    addressLabel: "Kawasan",
     emailLabel: "Email",
     toBeAdded: "akan ditambahkan",
     socialsEmpty: "Tautan media sosial akan ditambahkan",
     directions: "Petunjuk arah",
-    seeMap: "Lihat semua tempat di peta",
-
+    seeMap: "Lihat destinasi di peta",
     etiquetteEyebrow: "TAMU YANG BAIK",
     etiquetteTitle: "Berwisata dengan santun.",
-    etiquetteText: "Minta izin sebelum memotret, hormati ruang pribadi warga, dan dukung usaha milik warga setempat bila memungkinkan. Sedikit kebaikan sangat berarti.",
+    etiquetteText: "Setiap tempat dikelola mitra yang berbeda. Konfirmasikan izin, jadwal, dan titik temu sebelum berkunjung. Minta izin sebelum memotret, hormati ruang pribadi, dan jangan menganggap jamu tradisional sebagai saran medis.",
   },
 })
 
-// Contact details — the same in both languages, so they're NOT inside en/id.
-// Leave a value as "" and the page shows "to be added".
 export const contact = {
-  address: "", // TODO e.g. "Jl. ..., Kelurahan ..., Kecamatan ..., Kota Yogyakarta"
-  whatsapp: [
-    // number in international format without "+" or spaces, e.g. "6281234567890"
-    { name: "Village contact", number: "" }, // TODO
-  ],
-  email: "", // TODO
+  address: "Kampung Resonegaran, Kelurahan Terban, Kemantren Gondokusuman, Kota Yogyakarta, DIY",
+  whatsapp: [{ name: "Village contact", number: "" }],
+  email: "",
   socials: [
-    { name: "Instagram", url: "" }, // TODO e.g. "https://instagram.com/..."
+    { name: "Instagram", url: "" },
     { name: "TikTok", url: "" },
     { name: "YouTube", url: "" },
   ],

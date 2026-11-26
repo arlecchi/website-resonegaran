@@ -4,7 +4,7 @@
 
 import { useEffect, useState } from "react"
 import { useTheme } from "next-themes"
-import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, CalendarDays, Clock3, MapPin, Menu, Moon, Search, Sparkles, Sun, X } from "lucide-react"
+import { ArrowDown, ArrowLeft, ArrowRight, ArrowUpRight, CalendarDays, ChevronDown, Clock3, MapPin, Menu, Moon, Search, Sparkles, Sun, X } from "lucide-react"
 import { usePlaces } from "@/lib/places"
 import { Rich, useContent, useLanguage } from "@/lib/i18n"
 import { common, PAGES, type PageId } from "@/content/common"
@@ -24,6 +24,7 @@ export default function Page() {
   const [active, setActive] = useState<PageId>("profile")
   const [mobileOpen, setMobileOpen] = useState(false)
   const [query, setQuery] = useState("")
+  const [expandedTour, setExpandedTour] = useState<number | null>(null)
   const [mapPlace, setMapPlace] = useState<string | null>(null) // which place the Map page should focus on
   const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
@@ -63,7 +64,7 @@ export default function Page() {
         </section>
         <section className="intro-section section-pad"><div className="section-kicker">{tProfile.introKicker} <span>{tProfile.introLabel}</span></div><div className="intro-grid"><h2><Rich text={tProfile.introTitle}/></h2><div><p className="intro-copy">{tProfile.introText}</p><p className="muted-copy">{tProfile.introMuted}</p><button className="under-link" onClick={() => go("info")}>{tProfile.introLink} <ArrowRight size={15}/></button></div></div></section>
         <section className="feature-band"><div className="feature-image"/><div className="feature-copy"><span className="eyebrow">{tProfile.featureEyebrow}</span><h2><Rich text={tProfile.featureTitle}/></h2><p>{tProfile.featureText}</p><button className="button dark-button" onClick={() => go("tours")}>{tProfile.featureButton} <ArrowRight size={16}/></button></div></section>
-        <section className="places-section section-pad"><div className="section-kicker">{tProfile.previewKicker} <span>{tProfile.previewLabel}</span></div><div className="section-title-row"><h2><Rich text={tProfile.previewTitle}/></h2><button className="under-link" onClick={()=>go("places")}>{tProfile.previewSeeAll} <ArrowRight size={15}/></button></div><div className="preview-grid">{places.slice(0,2).map((p,i)=><article className="preview-card" key={p.slug} onClick={()=>go("places")}><div className="preview-photo" style={{backgroundImage:`url(${img(p.image)})`}}/><span className="preview-num">0{i+1}</span><div className="preview-card-copy"><span>{p.type}</span><h3>{p.name}</h3></div><ArrowUpRight className="preview-arrow" size={20}/></article>)}</div></section>
+        <section className="places-section section-pad"><div className="section-kicker">{tProfile.previewKicker} <span>{tProfile.previewLabel}</span></div><div className="section-title-row"><h2><Rich text={tProfile.previewTitle}/></h2><button className="under-link" onClick={()=>go("places")}>{tProfile.previewSeeAll} <ArrowRight size={15}/></button></div><div className="preview-grid">{places.slice(0,3).map((p,i)=><article className="preview-card" key={p.slug} onClick={()=>go("places")}><div className="preview-photo" style={{backgroundImage:`url(${img(p.image)})`}}/><span className="preview-num">0{i+1}</span><div className="preview-card-copy"><span>{p.type}</span><h3>{p.name}</h3></div><ArrowUpRight className="preview-arrow" size={20}/></article>)}</div></section>
         <section className="journal-strip"><div><span className="eyebrow">{tProfile.journalEyebrow}</span><h2><Rich text={tProfile.journalTitle}/></h2></div><button className="button cream" onClick={()=>go("blogs")}>{tProfile.journalButton} <ArrowRight size={16}/></button></section>
         <Footer go={go}/>
       </>}
@@ -75,7 +76,20 @@ export default function Page() {
       {active === "map" && <PageFrame go={go} kicker={tMap.kicker} title={tMap.title} lead={tMap.lead} number="03"><VillageMap selected={mapPlace} onSelect={setMapPlace}/></PageFrame>}
 
       {/* 04 — TOUR PLANS · text in content/tours.ts */}
-      {active === "tours" && <PageFrame go={go} kicker={tTours.kicker} title={tTours.title} lead={tTours.lead} number="04"><div className="tour-list">{tTours.list.map((t,i)=><article className="tour-row" key={i}><span className="tour-number">{pad(i+1)}</span><div className="tour-photo" style={{backgroundImage:`url(${img(places[i % places.length].image,700)})`}}/><div className="tour-details"><div className="tour-time"><Clock3 size={14}/>{t.time}</div><h3>{t.title}</h3><p>{t.text}</p></div><button className="round-arrow" aria-label={`${tTours.explore} ${t.title}`} onClick={()=>go("places")}><ArrowUpRight size={18}/></button></article>)}</div><div className="tour-note"><Sparkles size={18}/><p><b>{tTours.noteBold}</b> {tTours.noteText}</p><button onClick={()=>go("info")}>{tTours.noteButton} <ArrowRight size={15}/></button></div></PageFrame>}
+      {active === "tours" && <PageFrame go={go} kicker={tTours.kicker} title={tTours.title} lead={tTours.lead} number="04"><div className="tour-list">{tTours.list.map((t,i)=>{
+          const expanded = expandedTour === i
+          const imageSlug = i === 0 || i === 3 || i === 4 ? "sardjito-jamu" : i === 2 || i === 5 ? "batik-sekar-rinonce" : "museum-tni-ad"
+          const tourImage = places.find((place) => place.slug === imageSlug) ?? places[0]
+          return <article className={expanded ? "tour-item expanded" : "tour-item"} key={t.title}>
+            <div className="tour-row">
+              <span className="tour-number">{pad(i+1)}</span>
+              <div className="tour-photo" style={{backgroundImage:`url(${img(tourImage.image,700)})`}}/>
+              <div className="tour-details"><span className="tour-group">{t.group}</span><div className="tour-time"><Clock3 size={14}/>{t.time}</div><h3>{t.title}</h3><p>{t.text}</p></div>
+              <button className="round-arrow" type="button" aria-label={`${expanded ? tTours.collapse : tTours.explore}: ${t.title}`} aria-expanded={expanded} aria-controls={expanded ? `tour-itinerary-${i}` : undefined} onClick={()=>setExpandedTour(expanded ? null : i)}><ChevronDown className={expanded ? "is-open" : ""} size={18}/><span className="sr-only">{expanded ? tTours.collapse : tTours.explore}</span></button>
+            </div>
+            {expanded && <div className="tour-expanded" id={`tour-itinerary-${i}`}><span className="eyebrow">{tTours.itineraryLabel}</span><ol>{t.itinerary.map((step,stepIndex)=><li key={stepIndex}>{step}</li>)}</ol></div>}
+          </article>
+        })}</div><div className="tour-note"><Sparkles size={18}/><p><b>{tTours.noteBold}</b> {tTours.noteText}</p><button onClick={()=>go("info")}>{tTours.noteButton} <ArrowRight size={15}/></button></div></PageFrame>}
 
       {/* 05 — INFORMATION & HISTORY · text in content/info.ts */}
       {active === "info" && <PageFrame go={go} kicker={tInfo.kicker} title={tInfo.title} lead={tInfo.lead} number="05"><InfoHistory go={go}/></PageFrame>}

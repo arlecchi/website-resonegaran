@@ -1,65 +1,60 @@
-// Single source of truth for WHERE the places are (photo + coordinates).
-// The Places, Map and Tour plans pages (and the home page preview) all read from here.
-// The place NAMES and DESCRIPTIONS (English + Indonesian) live in content/places.ts.
-
+// Shared destination data for the Places, Map, Tour plans and Profile pages.
 import { placesContent } from "@/content/places"
 import { useContent } from "@/lib/i18n"
 
-// The slug must also exist under `places:` in content/places.ts — TypeScript will complain if it doesn't.
 export type PlaceSlug = keyof typeof placesContent.en.places
 
 type PlaceLocation = {
-  slug: PlaceSlug // short unique id, used to tell the map which place is selected
-  image: string // Unsplash photo id, turned into a full URL by img() in app/page.tsx
-  lat: number // latitude  (negative = south of the equator)
-  lng: number // longitude
+  slug: PlaceSlug
+  image: string
+  lat: number
+  lng: number
+  mapQuery: string
 }
 
-// TODO: replace every coordinate below with the real spot.
-// How: open Google Maps, right-click the exact location, and click the
-// "-7.80…, 110.36…" line at the top of the menu — that copies "lat, lng".
-
-// Centre of the village, used when no specific place is selected on the map.
 export const VILLAGE = {
-  name: "Resonegaran",
-  area: "Yogyakarta, Indonesia",
-  lat: -7.779748, // Depan Pak budi
+  name: "Kampung Resonegaran",
+  area: "Terban, Gondokusuman, Yogyakarta, Indonesia",
+  lat: -7.779748,
   lng: 110.375693,
 }
 
-// Builds the three Google Maps links for a point. Used by the Map page and the "Find us" block.
-// No API key needed for any of these.
-export function mapLinks(lat: number, lng: number, zoom = 15) {
-  const coords = `${lat},${lng}`
+// Google Maps accepts place/address text as well as coordinates; use verified names
+// when a precise public pin is unavailable rather than inventing coordinates.
+export function mapLinks(lat: number, lng: number, zoom = 15, mapQuery?: string) {
+  const destination = mapQuery || `${lat},${lng}`
+  const q = encodeURIComponent(destination)
   return {
-    embed: `https://maps.google.com/maps?q=${coords}&z=${zoom}&output=embed`, // for <iframe src>
-    directions: `https://www.google.com/maps/dir/?api=1&destination=${coords}`, // opens a route
-    open: `https://www.google.com/maps/search/?api=1&query=${coords}`, // opens the pin in Google Maps
+    embed: `https://maps.google.com/maps?q=${q}&z=${zoom}&output=embed`,
+    directions: `https://www.google.com/maps/dir/?api=1&destination=${q}`,
+    open: `https://www.google.com/maps/search/?api=1&query=${q}`,
   }
 }
 
 const locations: PlaceLocation[] = [
   {
-    slug: "village-lanes",
+    slug: "museum-tni-ad",
     image: "photo-1518005020951-eccb494ad742",
-    lat: -7.779748, // Depan Pak Budi
-    lng: 110.375693,
+    lat: -7.78293,
+    lng: 110.37514,
+    mapQuery: "Museum Pusat TNI AD Dharma Wiratama, Jl. Jenderal Sudirman No. 75, Yogyakarta",
   },
   {
-    slug: "rice-fields",
-    image: "photo-1500382017468-9049fed747ef",
-    lat: -7.8015, // placeholder
-    lng: 110.3689, // placeholder
+    slug: "batik-sekar-rinonce",
+    image: "photo-1528459801416-a9e53bbf4e17",
+    lat: VILLAGE.lat,
+    lng: VILLAGE.lng,
+    mapQuery: "Batik Sekar Rinonce, Gg. Resonegaran GK No. 5/1296, Yogyakarta",
   },
   {
-    slug: "gathering-space",
-    image: "photo-1518998053901-5348d3961a04",
-    lat: -7.8004, // placeholder
-    lng: 110.3641, // placeholder
+    slug: "sardjito-jamu",
+    image: "photo-1566127992631-137a642a90f4",
+    lat: VILLAGE.lat,
+    lng: VILLAGE.lng,
+    mapQuery: "Rumah Prof. Sardjito, Jl. Cik Di Tiro No. 16, Terban, Yogyakarta",
   },
 ]
 
-/** All places, with name/type/time/desc in the language the visitor picked. */
 export function usePlaces() {
   const text = useContent(placesContent).places
   return locations.map((loc) => ({ ...loc, ...text[loc.slug] }))

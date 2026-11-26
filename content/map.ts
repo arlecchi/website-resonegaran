@@ -1,34 +1,31 @@
-// Page 03 — Map. (Place names come from content/places.ts.)
-// `en` = English, `id` = Bahasa Indonesia. Both must have the same fields.
-// Formatting: "\n" = line break, "*word*" = coloured italic. (See TRANSLATING.md)
-
+// Page 03 — Map. Destination labels are shared with content/places.ts.
 import { defineContent } from "@/lib/i18n"
 
 export const mapContent = defineContent({
   en: {
-    kicker: "GETTING AROUND",
-    title: "A little map.\n*A lot to find.*",
-    lead: "Resonegaran is best explored at an easy pace. Use this starting point to find your bearings.",
-    listTitle: "PLACES ON THE MAP",
+    kicker: "FIND THE THREE DESTINATIONS",
+    title: "A heritage walk\n*through Terban.*",
+    lead: "The proposed route connects Resonegaran’s heritage, batik, and jamu experiences. Check each host’s access before setting out.",
+    listTitle: "THE DESTINATIONS",
     villageName: "Kampung Resonegaran",
-    overview: "Overview",
-    best: "best", // shown as "Nature · best early morning"
+    overview: "Village overview",
+    best: "best",
     mapOf: "Map of",
     directions: "Get directions",
     openInMaps: "Open in Google Maps",
-    note: "Pin locations are placeholders · to be confirmed",
+    note: "Batik and Sardjito stops are approximate map searches; confirm access and the exact meeting point with the host.",
   },
   id: {
-    kicker: "BERKELILING",
-    title: "Peta kecil.\n*Banyak yang ditemukan.*",
-    lead: "Resonegaran paling nikmat dijelajahi dengan santai. Gunakan peta ini sebagai titik awal.",
-    listTitle: "TEMPAT DI PETA",
+    kicker: "TEMUKAN TIGA DESTINASI",
+    title: "Heritage walk\n*menyusuri Terban.*",
+    lead: "Rute yang dirancang ini menghubungkan pengalaman heritage, batik, dan jamu di Resonegaran. Pastikan akses setiap tempat sebelum berangkat.",
+    listTitle: "DESTINASI",
     villageName: "Kampung Resonegaran",
-    overview: "Gambaran umum",
-    best: "paling pas", // tampil sebagai "Alam · paling pas pagi hari"
+    overview: "Gambaran kampung",
+    best: "paling pas",
     mapOf: "Peta",
     directions: "Petunjuk arah",
     openInMaps: "Buka di Google Maps",
-    note: "Lokasi pin masih sementara · akan dikonfirmasi",
+    note: "Pin batik dan rumah Sardjito merupakan hasil pencarian lokasi perkiraan; konfirmasikan akses dan titik temu yang tepat kepada tuan rumah.",
   },
 })

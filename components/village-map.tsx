@@ -19,7 +19,7 @@ export function VillageMap({ selected, onSelect }: Props) {
   const target = place ?? VILLAGE
 
   // Zoom in closer (17) on a single place, further out (15) for the whole village.
-  const { embed: embedSrc, directions: directionsUrl, open: openUrl } = mapLinks(target.lat, target.lng, place ? 17 : 15)
+  const { embed: embedSrc, directions: directionsUrl, open: openUrl } = mapLinks(target.lat, target.lng, place ? 17 : 15, place?.mapQuery)
 
   return (
     <div className="map-layout">
@@ -60,7 +60,7 @@ export function VillageMap({ selected, onSelect }: Props) {
           <MapPin size={16} />
           <span>
             <b>{place?.name ?? VILLAGE.name}</b>
-            <small>{place ? `${place.type} · ${t.best} ${place.time.toLowerCase()}` : VILLAGE.area}</small>
+            <small>{place ? `${place.type} · ${place.time}` : VILLAGE.area}</small>
           </span>
         </div>
 

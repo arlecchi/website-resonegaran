@@ -1,41 +1,130 @@
-// Page 04 — Tour plans.
-// `en` = English, `id` = Bahasa Indonesia. Both must have the same fields.
-// Formatting: "\n" = line break, "*word*" = coloured italic. (See TRANSLATING.md)
-
+// Page 04 — seven packages grouped by one, two, or three destinations.
+// Timings and routes are proposal estimates; hosts confirm the final schedule.
 import { defineContent } from "@/lib/i18n"
 
 export const tours = defineContent({
   en: {
-    kicker: "MAKE A DAY OF IT",
-    title: "Good days,\n*well spent.*",
-    lead: "Simple ideas for exploring Resonegaran. Mix and match, or let the day surprise you.",
-
-    // Keep the same number of tours, in the same order, in en and id.
+    kicker: "SEVEN WAYS TO EXPLORE",
+    title: "Choose your\n*Resonegaran route.*",
+    lead: "Pick one destination, combine two, or spend a day with all three. Multi-stop routes are walked with a local guide.",
+    itineraryLabel: "SUGGESTED ITINERARY",
     list: [
-      { title: "A gentle village morning", time: "2 hours", text: "Start with a slow walk through the lanes, stop by the fields, and share a local breakfast." },
-      { title: "Resonegaran by bike", time: "Half day", text: "Take the scenic route past farms and neighborhood landmarks, with plenty of time to pause." },
-      { title: "Meet the makers", time: "Half day", text: "Spend an unhurried afternoon meeting local residents and learning about daily village life." },
+      {
+        group: "1 DESTINATION",
+        title: "Prof. Sardjito House & Jamu",
+        time: "Single stop · duration arranged with host",
+        text: "Learn about the history of Prof. Sardjito’s house and traditional jamu knowledge from the site’s host or resource person.",
+        itinerary: ["Meet at Jl. Cik Di Tiro No. 16, Yogyakarta.", "Join the host-led introduction to the house and Prof. Sardjito’s story.", "Learn about the jamu activity available on the visit date; tasting is subject to host confirmation."],
+      },
+      {
+        group: "1 DESTINATION",
+        title: "Museum TNI AD Dharma Wiratama",
+        time: "Single stop · museum visit about 1 hour",
+        text: "Take an educational museum tour and hear about the collections and history from a museum guide.",
+        itinerary: ["Meet at Jl. Jenderal Sudirman No. 75, Yogyakarta.", "Join the museum’s guided tour of its collections and historical displays.", "The museum lists hours Tuesday–Sunday, 08:00–15:00; group visits require advance reservation."],
+      },
+      {
+        group: "1 DESTINATION",
+        title: "Batik Sekar Rinonce",
+        time: "Single stop · sample workshop about 3 hr 50 min",
+        text: "Discover batik tulis and try the process with guidance from local artisans. Drying time can affect the session length.",
+        itinerary: ["Meet the artisans at Gg. Resonegaran GK No. 5/1296, Yogyakarta.", "Learn about batik tools and the meaning of batik tulis.", "Try canting on cotton, add colour, set the colour, and remove the wax; confirm the session and group capacity with the studio."],
+      },
+      {
+        group: "2 DESTINATIONS",
+        title: "Jamu House + Batik Sekar Rinonce",
+        time: "Two stops · walking transfer with a guide",
+        text: "Start with Prof. Sardjito’s house and jamu, then walk with a local guide to a batik introduction and workshop.",
+        itinerary: ["Begin at the Prof. Sardjito house and jamu site; access needs host permission.", "Walk via Jl. Kartini, Jl. Dewi Sartika, Gang Resonegaran, Gang Masjid El Hasan, and Jl. Sagan Kidul.", "Meet the artisans at Batik Sekar Rinonce for the arranged batik activity."],
+      },
+      {
+        group: "2 DESTINATIONS",
+        title: "Jamu House + Army Museum",
+        time: "Two stops · walking transfer with a guide",
+        text: "Pair a host-led introduction to the Sardjito home and jamu knowledge with a guided visit to the Army Museum.",
+        itinerary: ["Begin at Jl. Cik Di Tiro No. 16 with prior permission from the host.", "Walk through the heritage neighborhood via Jl. Kartini, Jl. Dewi Sartika, Jl. Sam Ratulangi, and Jl. Jenderal Sudirman.", "Finish with the museum tour at Jl. Jenderal Sudirman No. 75; reserve group visits in advance."],
+      },
+      {
+        group: "2 DESTINATIONS",
+        title: "Batik Sekar Rinonce + Army Museum",
+        time: "Two stops · walking transfer with a guide",
+        text: "Begin with a guided batik activity, then continue on foot to the Army Museum for a history-focused tour.",
+        itinerary: ["Start at Batik Sekar Rinonce for the pre-arranged batik introduction or workshop.", "Walk with the guide via Jl. Sagan Kidul and Jl. Jenderal Sudirman.", "Explore Museum TNI AD Dharma Wiratama with a museum guide; group visits require advance reservation."],
+      },
+      {
+        group: "3 DESTINATIONS · ONE-DAY TOUR",
+        title: "The Resonegaran Heritage, Culture & Wellness Day",
+        time: "Three stops · around 8 hours planned",
+        text: "Experience all three destinations in sequence: jamu and heritage, hands-on batik, and the Army Museum. The full-day schedule depends on host access and museum hours.",
+        itinerary: ["Begin at the Prof. Sardjito house and jamu site with the host’s permission.", "Walk via Jl. Kartini, Jl. Dewi Sartika, Gang Resonegaran, Gang Masjid El Hasan, and Jl. Sagan Kidul to Batik Sekar Rinonce.", "After the batik activity, continue via Jl. Sagan Kidul and Jl. Jenderal Sudirman to Museum TNI AD Dharma Wiratama.", "The proposal’s sample batik activity is about 3 hr 50 min; drying may take longer. Confirm all partner arrangements and museum reservations before booking."],
+      },
     ],
-    explore: "Explore", // screen-reader label: "Explore A gentle village morning"
-
-    noteBold: "Make it your own.",
-    noteText: "These are just starting points. Ask a local guide about seasonal activities and community visits.",
-    noteButton: "Good to know",
+    explore: "Expand itinerary",
+    collapse: "Collapse itinerary",
+    noteBold: "Plan visit.",
+    noteText: "Contact each destination or Kampung Wisata Resonegaran for reservations.",
+    noteButton: "Visitor information",
   },
   id: {
-    kicker: "HABISKAN HARIMU DI SINI",
-    title: "Hari yang baik,\n*waktu yang berarti.*",
-    lead: "Ide sederhana untuk menjelajahi Resonegaran. Padukan sesukamu, atau biarkan harimu penuh kejutan.",
-
+    kicker: "TUJUH CARA MENJELAJAHI",
+    title: "Pilih rute\n*Resonegaranmu.*",
+    lead: "Pilih satu destinasi, gabungkan dua, atau luangkan sehari untuk ketiganya. Perpindahan dalam rute multi-destinasi dilakukan dengan berjalan kaki bersama pemandu lokal.",
+    itineraryLabel: "RANCANGAN ITINERARY",
     list: [
-      { title: "Pagi yang tenang di kampung", time: "2 jam", text: "Mulailah dengan jalan santai menyusuri gang, mampir ke sawah, lalu sarapan khas bersama warga." },
-      { title: "Bersepeda keliling Resonegaran", time: "Setengah hari", text: "Ambil rute yang indah melewati kebun dan tempat-tempat khas kampung, dengan banyak waktu untuk berhenti sejenak." },
-      { title: "Bertemu para perajin", time: "Setengah hari", text: "Habiskan sore yang santai bersama warga dan belajar tentang kehidupan sehari-hari di kampung." },
+      {
+        group: "1 DESTINASI",
+        title: "Rumah Prof. Sardjito & Jamu",
+        time: "Satu tempat · durasi diatur dengan tuan rumah",
+        text: "Kenali sejarah rumah Prof. Sardjito dan pengetahuan jamu tradisional dari pengelola atau narasumber di lokasi.",
+        itinerary: ["Bertemu di Jl. Cik Di Tiro No. 16, Yogyakarta.", "Ikuti pengenalan rumah dan kisah Prof. Sardjito bersama tuan rumah.", "Kenali kegiatan jamu yang tersedia pada tanggal kunjungan; cicip jamu bergantung pada konfirmasi tuan rumah."],
+      },
+      {
+        group: "1 DESTINASI",
+        title: "Museum TNI AD Dharma Wiratama",
+        time: "Satu tempat · tur museum sekitar 1 jam",
+        text: "Ikuti tur edukasi museum dan dengarkan penjelasan pemandu tentang koleksi serta sejarahnya.",
+        itinerary: ["Bertemu di Jl. Jenderal Sudirman No. 75, Yogyakarta.", "Ikuti tur berpemandu untuk melihat koleksi dan informasi sejarah museum.", "Museum mencantumkan jam buka Selasa–Minggu, 08.00–15.00; rombongan wajib reservasi terlebih dahulu."],
+      },
+      {
+        group: "1 DESTINASI",
+        title: "Batik Sekar Rinonce",
+        time: "Satu tempat · contoh lokakarya sekitar 3 jam 50 menit",
+        text: "Kenali batik tulis dan mencoba prosesnya dengan pendampingan perajin lokal. Waktu pengeringan dapat memengaruhi durasi sesi.",
+        itinerary: ["Bertemu perajin di Gg. Resonegaran GK No. 5/1296, Yogyakarta.", "Kenali alat membatik dan makna batik tulis.", "Coba mencanting di kain katun, mewarnai, mengunci warna, dan melorod malam; konfirmasikan sesi dan kapasitas rombongan kepada sanggar."],
+      },
+      {
+        group: "2 DESTINASI",
+        title: "Rumah Jamu + Batik Sekar Rinonce",
+        time: "Dua tempat · perpindahan berjalan kaki dengan pemandu",
+        text: "Awali dengan pengenalan rumah Prof. Sardjito dan jamu, lalu berjalan bersama pemandu lokal untuk mengenal dan mempraktikkan batik.",
+        itinerary: ["Awali di rumah Prof. Sardjito dan lokasi jamu; kunjungan memerlukan izin tuan rumah.", "Berjalan melalui Jl. Kartini, Jl. Dewi Sartika, Gang Resonegaran, Gang Masjid El Hasan, dan Jl. Sagan Kidul.", "Bertemu perajin di Batik Sekar Rinonce untuk kegiatan batik yang telah diatur."],
+      },
+      {
+        group: "2 DESTINASI",
+        title: "Rumah Jamu + Museum TNI AD",
+        time: "Dua tempat · perpindahan berjalan kaki dengan pemandu",
+        text: "Padukan pengenalan rumah Sardjito dan pengetahuan jamu bersama tuan rumah dengan kunjungan berpemandu ke Museum TNI AD.",
+        itinerary: ["Awali di Jl. Cik Di Tiro No. 16 dengan izin tuan rumah sebelumnya.", "Berjalan menyusuri kawasan heritage melalui Jl. Kartini, Jl. Dewi Sartika, Jl. Sam Ratulangi, dan Jl. Jenderal Sudirman.", "Akhiri dengan tur museum di Jl. Jenderal Sudirman No. 75; rombongan wajib reservasi terlebih dahulu."],
+      },
+      {
+        group: "2 DESTINASI",
+        title: "Batik Sekar Rinonce + Museum TNI AD",
+        time: "Dua tempat · perpindahan berjalan kaki dengan pemandu",
+        text: "Awali dengan kegiatan batik bersama perajin, lalu lanjut berjalan kaki ke Museum TNI AD untuk tur sejarah.",
+        itinerary: ["Mulai di Batik Sekar Rinonce untuk pengenalan atau lokakarya batik yang telah diatur.", "Berjalan bersama pemandu melalui Jl. Sagan Kidul dan Jl. Jenderal Sudirman.", "Jelajahi Museum TNI AD Dharma Wiratama bersama pemandu museum; rombongan wajib reservasi."],
+      },
+      {
+        group: "3 DESTINASI · TUR SEHARI",
+        title: "Sehari di Resonegaran: Heritage, Budaya & Wellness",
+        time: "Tiga tempat · rancangan sekitar 8 jam",
+        text: "Kunjungi ketiga destinasi secara berurutan: jamu dan heritage, praktik membatik, lalu Museum TNI AD. Jadwal sehari penuh bergantung pada izin tuan rumah dan jam museum.",
+        itinerary: ["Awali di rumah Prof. Sardjito dan lokasi jamu dengan izin tuan rumah.", "Berjalan melalui Jl. Kartini, Jl. Dewi Sartika, Gang Resonegaran, Gang Masjid El Hasan, dan Jl. Sagan Kidul menuju Batik Sekar Rinonce.", "Setelah kegiatan batik, lanjut melalui Jl. Sagan Kidul dan Jl. Jenderal Sudirman ke Museum TNI AD Dharma Wiratama.", "Contoh sesi batik dalam proposal berlangsung sekitar 3 jam 50 menit; pengeringan dapat memerlukan waktu lebih lama. Konfirmasikan semua mitra dan reservasi museum sebelum memesan."],
+      },
     ],
-    explore: "Jelajahi",
-
-    noteBold: "Sesuaikan dengan keinginanmu.",
-    noteText: "Ini hanya titik awal. Tanyakan kepada pemandu lokal tentang kegiatan musiman dan kunjungan ke komunitas.",
-    noteButton: "Perlu diketahui",
+    explore: "Lihat itinerary",
+    collapse: "Tutup itinerary",
+    noteBold: "Rencanakan visit.",
+    noteText: "Silahkan mengontak destinasi wisata atau pihak Kampung Wisata Resonegaran untuk membuat reservasi.",
+    noteButton: "Informasi kunjungan",
   },
 })
