@@ -3,6 +3,7 @@ import { defineContent } from "@/lib/content"
 
 const travelHealthKitPost = {
   slug: "personal-travel-health-kit",
+  checklist: true,
   category: "TRAVEL HEALTH",
   title: "PERSONAL TRAVEL HEALTH KIT",
   date: "A concise packing guide based on the CDC Yellow Book 2026",
@@ -73,7 +74,7 @@ const travelHealthKitPost = {
     {
       heading: "4. Regular and Other Prescription Medicines",
       paragraphs: [],
-      bullets: ["Other prescription-related supplies: Needles and syringes for regularly self-administered injectable medicines (e.g., insulin; carry a copy of the prescription), and spare prescription glasses or contact lenses."],
+      afterTable: ["Other prescription-related supplies: Needles and syringes for regularly self-administered injectable medicines (e.g., insulin; carry a copy of the prescription), and spare prescription glasses or contact lenses."],
       checkableParagraph: true,
       table: {
         headers: ["DRUG TYPE", "GENERIC NAME (ACTIVE INGREDIENT)", "INDICATIONS / SYMPTOMS"],
@@ -164,6 +165,111 @@ const travelHealthKitPost = {
   ],
 }
 
+const avoidingBitesPost = {
+  slug: "avoiding-insect-and-arthropod-bites-indonesia",
+  category: "TRAVEL HEALTH",
+  title: "AVOIDING INSECT AND ARTHROPOD BITES IN INDONESIA",
+  date: "",
+  image: "/illustrations/dead-mosquito.jpg",
+  imageAlt: "Cute cartoon illustration of a dead mosquito",
+  excerpt: "Mosquitoes are the most important biting vectors for travelers in Indonesia. Depending on the region and itinerary, mosquitoes can transmit dengue, chikungunya, Zika, malaria, Japanese encephalitis (JE), and lymphatic filariasis.",
+  deck: "A practical travel guide adapted from CDC Travelers’ Health and Indonesian vector information",
+  sections: [
+    {
+      heading: "Why Bite Prevention Matters",
+      paragraphs: ["Mosquitoes are the most important biting vectors for travelers in Indonesia. Depending on the region and itinerary, mosquitoes can transmit dengue, chikungunya, Zika, malaria, Japanese encephalitis (JE), and lymphatic filariasis. Ticks and other biting arthropods may also be encountered, particularly during outdoor activities. Risk varies by location, season, accommodation, and activities."],
+      images: [{ src: "https://media.istockphoto.com/id/1266937706/id/vektor/nyamuk-mengisap-darah.jpg?s=1024x1024&w=is&k=20&c=Z62kUUYZ7x_wv1WbEPw-wkKbvxb7VPPBIPTvmDxagwI=", alt: "Illustration of a mosquito feeding" }],
+    },
+    {
+      heading: "1. Mosquitoes: The Main Travel Concern",
+      paragraphs: [],
+      afterTable: ["Note: This is a practical overview, not a complete species checklist. Indonesian Ministry of Health material confirms Aedes aegypti as a vector of dengue, chikungunya, and Zika; Culex quinquefasciatus as a vector associated with lymphatic filariasis and JE; and Culex tritaeniorhynchus as a confirmed JE vector in Indonesia."],
+      table: {
+        headers: ["MOSQUITO GROUP", "DISEASES OF CONCERN IN INDONESIA", "PRACTICAL RISK CONTEXT"],
+        rows: [
+          ["Aedes aegypti / Aedes albopictus", "Dengue, chikungunya, and Zika", "Aedes aegypti is widely distributed in Indonesia and commonly bites during the day, particularly in the morning and late afternoon; biting can also occur at night."],
+          ["Anopheles species", "Malaria", "Risk is highly location-dependent. Prevention is especially important in malaria-risk areas, including parts of eastern Indonesia and rural areas in several other islands."],
+          ["Culex species (including Culex quinquefasciatus and Culex tritaeniorhynchus)", "Japanese encephalitis and lymphatic filariasis", "Culex mosquitoes may bite in and around homes and in environments near rice fields, wetlands, or animal-rearing areas. JE risk is particularly relevant for rural or longer stays."],
+        ],
+      },
+    },
+    {
+      heading: "2. Other Biting Arthropods to Be Aware Of",
+      paragraphs: [],
+      subsections: [
+        {
+          heading: "Ticks and chigger mites",
+          paragraphs: ["Ticks may be encountered in grassy, brushy, wooded areas, and on animals. Chiggers are larval mites (not insects) that can occur in vegetation and may cause intensely itchy bites; some chigger mites transmit scrub typhus in parts of Asia. The exact risk depends on the area and exposure. After hiking, camping, gardening, or visiting farms, check your skin, clothing, and gear. Pay particular attention to the waist, armpits, groin, behind the knees, around the ears, and scalp."],
+          images: [{ src: "https://today.uconn.edu/wp-content/uploads/2017/06/Tick-Illus-630x420-JB.jpg", alt: "Tick illustration" }],
+        },
+        {
+          heading: "Fleas",
+          paragraphs: ["Fleas may be present around animals and in environments where animals rest. Avoid handling stray or infested animals, and avoid sitting or sleeping in areas with visible flea activity. Plague is flea-borne but is geographically focal and not a routine risk for most travelers; seek local health advice if visiting a known risk area."],
+          images: [{ src: "https://media.istockphoto.com/id/938422010/id/vektor/kutu-kartun.jpg?s=1024x1024&w=is&k=20&c=-ScoF_V8z2MsZsurbA2wfvzfGLZj1jdsLuxwT4c-pRc=", alt: "Illustration of a flea" }],
+        },
+      ],
+    },
+    {
+      heading: "3. How to Prevent Bites",
+      paragraphs: [],
+      images: [{ src: "/illustrations/dead-mosquito.jpg", href: "https://www.magnific.com/free-vector/cute-mosquito-dead-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-premium_28952494.htm#fromView=keyword&page=1&position=11&uuid=6162fb13-0ee7-47b4-a7ff-4229ab822d6b&track=ais_hybrid&query=Cartoon+bug+bite", alt: "Cute cartoon illustration of a dead mosquito" }],
+      bullets: [
+        "Choose a registered skin-applied repellent. In Indonesia, look for mosquito-repellent lotion or spray with a valid BPOM authorization/notification as applicable. Check the product in the official BPOM Cek Produk database (https://cekbpom.pom.go.id/) and make sure the product name, manufacturer, and registration details match the packaging. Follow the age restrictions, directions, and reapplication interval on the label.",
+        "Check the active ingredient and label. Common repellent active ingredients include DEET, picaridin/icaridin, and IR3535; formulations and concentrations available in Indonesia vary. Do not assume that every product contains the same ingredient or offers the same duration of protection. Use a product whose label specifically states that it is intended for application to human skin.",
+        "Apply repellent correctly. Apply sunscreen first and insect repellent afterwards. Avoid the eyes, mouth, hands of young children, broken skin, and irritated skin. Adults should apply repellent to their own hands before carefully applying it to a child's face. Wash treated skin when protection is no longer needed.",
+        "Use protective clothing. Wear loose-fitting long-sleeved shirts, long trousers, and covered footwear, especially in areas with mosquitoes or dense vegetation.",
+        "Use physical barriers. Choose accommodation with intact window and door screens or air conditioning. Use a mosquito net when sleeping outdoors or when screened rooms are unavailable; cover strollers and baby carriers with mosquito netting.",
+        "Reduce mosquito breeding sites. Apply Indonesia's 3M Plus approach: drain and scrub water containers regularly (Menguras), cover water-storage containers (Menutup), and reuse or recycle items that can collect rainwater (Memanfaatkan/Mendaur ulang). Additional measures include using repellent, mosquito nets, window screens, larval control where appropriate, and routine environmental checks.",
+        "For household insecticide products. Mosquito coils, electric vaporizers, aerosols, and other household insecticides are not the same as skin-applied repellents. Check that the product has the appropriate Indonesian authorization/marketing permit for its product category, follow the label, and use it with adequate ventilation. Do not apply household insecticides to skin or clothing unless the label explicitly permits that use.",
+        "For clothing treatment. Do not transfer the CDC/EPA permethrin-clothing advice automatically to products sold in Indonesia. Use a clothing-treatment product only if it is legally marketed for that purpose in Indonesia and its label specifically gives instructions for treating clothing or gear. Never apply agricultural or household insecticide products directly to skin.",
+      ],
+    },
+    {
+      heading: "4. Additional Advice for Babies and Children",
+      paragraphs: [],
+      images: [{ src: "https://thumbs.dreamstime.com/b/cartoon-mosquitoes-vector-cartoon-little-girl-mosquitoes-bite-184370364.jpg?w=768", alt: "Illustration of a child protected by mosquito netting" }],
+      bullets: [
+        "Dress children in clothing that covers their arms and legs; use mosquito netting over strollers and baby carriers.",
+        "Always follow the age restrictions and instructions on the Indonesian product label. Do not use oil of lemon eucalyptus (OLE) or para-menthane-diol (PMD) products on children younger than 3 years, consistent with CDC guidance.",
+        "Do not apply repellent to a child's hands, eyes, mouth, cuts, or irritated skin. An adult should apply it to their own hands first, then carefully spread it over the child's face.",
+        "Do not apply clothing-treatment insecticides or household insecticides directly to skin. Use only products specifically labeled for human-skin application.",
+      ],
+    },
+    {
+      heading: "5. After Outdoor Activities or a Bite",
+      paragraphs: [],
+      images: [{ src: "https://img.magnific.com/free-vector/mosquito-biting-person-with-flat-design_23-2147934964.jpg?t=st=1795668305~exp=1795671905~hmac=25cd103bc64ae6e56a0d481faac623a78b421ba407ccc49163b5b02709460c1a&w=360", alt: "Illustration of a mosquito bite and skin irritation" }],
+      bullets: [
+        "Avoid scratching bites. Calamine lotion or an appropriate over-the-counter anti-itch preparation may help relieve itching.",
+        "After time in grassy or wooded areas, inspect the entire body, clothing, bags, and pets for ticks. Shower soon after returning indoors and remove attached ticks promptly and carefully.",
+        "Seek medical assessment if fever, severe headache, marked muscle or joint pain, rash, or unusual weakness develops during or after travel. Tell the healthcare provider where and when you travelled and mention any insect or tick exposure.",
+        "A fever after visiting a malaria-risk area requires prompt medical evaluation, even if preventive measures were used.",
+      ],
+    },
+    {
+      heading: "How to check products in Indonesia:",
+      paragraphs: ["For mosquito-repellent lotions or sprays intended for direct application to skin, the Indonesian Ministry of Health advises choosing products authorized by BPOM. Verify the product through BPOM's official Cek Produk portal (https://cekbpom.pom.go.id/). For household insecticide products (e.g., aerosol, coils, or electric mosquito repellents), check the relevant Indonesian marketing authorization for that product category; household products may fall under the Ministry of Health's regulatory system rather than the BPOM skin-repellent pathway. Always follow the product label."],
+    },
+    {
+      heading: "Key Takeaway",
+      paragraphs: ["For most travelers in Indonesia, mosquito-bite prevention should be the priority: use repellent consistently, cover exposed skin, choose screened or air-conditioned accommodation, and use a bed net when needed. Add tick and flea precautions when the itinerary includes forests, farms, grassland, or close contact with animals."],
+    },
+    {
+      heading: "References",
+      paragraphs: [],
+      bullets: [
+        "1.\tCenters for Disease Control and Prevention (CDC). Avoid Bug Bites. Travelers’ Health. Page last reviewed May 11, 2022. https://wwwnc.cdc.gov/travel/page/avoid-bug-bites",
+        "2.\tCenters for Disease Control and Prevention (CDC). Indonesia – Traveler View. https://wwwnc.cdc.gov/travel/destinations/traveler/none/Indonesia/",
+        "3.\tMinistry of Health, Republic of Indonesia. Pedoman Penanggulangan Demam Rift Valley di Indonesia. 2024. (Vector distribution and mosquito species information.) https://infeksiemerging.kemkes.go.id/index.php/document/download/M88O",
+        "4.\tWorld Health Organization (WHO). Vector-borne diseases. https://www.who.int/news-room/fact-sheets/detail/vector-borne-diseases",
+        "5.\tMinistry of Health, Republic of Indonesia. Cara Mencegah DBD dengan Menjaga Lingkungan & Diri Sendiri (3M Plus; repellent lotion certified by BPOM). https://ayosehat.kemkes.go.id/cara-mencegah-dbd",
+        "6.\tMinistry of Health, Republic of Indonesia. Musim Penghujan Tiba, Waspada DBD di Lingkungan Kita (3M Plus). https://ayosehat.kemkes.go.id/musim-penghujan-tiba-waspada-dbd",
+        "7.\tMinistry of Health, Republic of Indonesia. Regulation and guidance for household health supplies (PKRT), including household insecticide products. https://regalkes.kemkes.go.id/",
+      ],
+    },
+  ],
+}
+
 export const blogs = defineContent({
   en: {
     kicker: "FIELD NOTES FROM TERBAN",
@@ -241,6 +347,7 @@ export const blogs = defineContent({
         ],
       },
       travelHealthKitPost,
+      avoidingBitesPost,
     ],
     readStory: "Read the story",
     signoffEyebrow: "A COMMUNITY-ROOTED VISIT",
@@ -324,6 +431,7 @@ export const blogs = defineContent({
         ],
       },
       travelHealthKitPost,
+      avoidingBitesPost,
     ],
     readStory: "Baca ceritanya",
     signoffEyebrow: "KUNJUNGAN BERBASIS MASYARAKAT",
