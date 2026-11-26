@@ -4,8 +4,8 @@ import { defineContent } from "@/lib/i18n"
 export const profile = defineContent({
   en: {
     heroEyebrow: "THREE STORIES. ONE NEIGHBORHOOD.",
-    heroTitle: "Meet Resonegaran through\n*heritage, culture & wellness.*",
-    heroText: "In Terban, Yogyakarta, a heritage walk, a batik workshop, and traditional jamu knowledge come together in one community-rooted visit.",
+    heroTitle: "Meet Resonegaran\n*heritage, culture & wellness.*",
+    heroText: "In Terban, Yogyakarta, heritage site, handmade batik workshop, and traditional jamu knowledge come together in one community-rooted visit.",
     heroExplore: "Explore the destinations",
     heroAbout: "The story behind them",
     heroCaption: "KAMPUNG RESONEGARAN · TERBAN · YOGYAKARTA",
@@ -29,7 +29,7 @@ export const profile = defineContent({
   },
   id: {
     heroEyebrow: "TIGA KISAH. SATU KAWASAN.",
-    heroTitle: "Kenali Resonegaran lewat\n*warisan, budaya & kesehatan.*",
+    heroTitle: "Kenali Resonegaran\n*warisan, budaya & kesehatan.*",
     heroText: "Di Terban, Yogyakarta, wisata jalan kaki bersejarah, lokakarya batik, dan pengetahuan jamu tradisional dirangkai dalam kunjungan yang berakar pada masyarakat.",
     heroExplore: "Jelajahi destinasi",
     heroAbout: "Kisah di baliknya",
