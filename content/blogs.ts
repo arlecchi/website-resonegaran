@@ -1,6 +1,169 @@
 // Page 06 — Blog index and full article copy, in English and Bahasa Indonesia.
 import { defineContent } from "@/lib/content"
 
+const travelHealthKitPost = {
+  slug: "personal-travel-health-kit",
+  category: "TRAVEL HEALTH",
+  title: "PERSONAL TRAVEL HEALTH KIT",
+  date: "A concise packing guide based on the CDC Yellow Book 2026",
+  image: "photo-1505751172876-fa1923c5c528",
+  imageAlt: "Travel health and medical preparation",
+  excerpt: "A personal travel health kit helps travelers manage common minor illnesses and injuries, treat recurring problems, and continue treatment for chronic conditions while away from home.",
+  deck: "A concise packing guide based on the CDC Yellow Book 2026",
+  sections: [
+    {
+      heading: "Purpose",
+      paragraphs: ["A personal travel health kit helps travelers manage common minor illnesses and injuries, treat recurring problems, and continue treatment for chronic conditions while away from home."],
+    },
+    {
+      heading: "How to prepare",
+      paragraphs: ["Personalize the contents according to your medical history, destination, itinerary, planned activities, trip duration, access to medical care, and available space. Keep medicines and first-aid supplies in a durable, water-resistant container that is readily accessible."],
+    },
+    {
+      heading: "1. Bandages and Wound Care",
+      paragraphs: [],
+      table: {
+        headers: ["ITEMS", "PURPOSE / NOTES"],
+        rows: [
+          ["Adhesive bandages (various sizes; include waterproof options)", "Minor cuts and scrapes."],
+          ["Adhesive felt or gel pads", "Blister prevention and treatment."],
+          ["Elastic bandage (2-inch and 4-inch)", "Sprains; can also secure larger dressings."],
+          ["Gauze pads and non-stick dressings (2 × 2 and 4 × 4 inches)", "Cleaning and covering larger wounds."],
+          ["Medical adhesive tape / self-adhesive bandage wrap", "Securing dressings."],
+          ["Small bandage scissors", "Cutting bandages or tape."],
+          ["Wound-closure strips (butterfly strips)", "Closing selected small wounds; requires some expertise and a clean wound."],
+        ],
+      },
+    },
+    {
+      heading: "2. Topical Medicines",
+      paragraphs: [],
+      table: {
+        headers: ["DRUG TYPE", "GENERIC NAME (ACTIVE INGREDIENT)", "INDICATIONS / SYMPTOMS"],
+        rows: [
+          ["Skin soothing agent", "Aloe vera gel", "Mild sunburn and minor skin irritation."],
+          ["Antipruritic", "Calamine", "Itching from minor skin irritation or insect bites."],
+          ["Topical antifungal", "Clotrimazole 1% cream", "Localized superficial fungal skin infections."],
+          ["Topical antiseptic", "Povidone-iodine", "Antisepsis of minor cuts and superficial wounds; use according to product directions."],
+          ["Topical corticosteroid", "Hydrocortisone 1% cream", "Short-term relief of mild, localized inflammatory rashes and itching; avoid use on infected skin unless advised."],
+        ],
+      },
+    },
+    {
+      heading: "3. Medicines for Common Problems",
+      paragraphs: [],
+      table: {
+        headers: ["DRUG TYPE", "GENERIC NAME (ACTIVE INGREDIENT)", "INDICATIONS / SYMPTOMS"],
+        rows: [
+          ["Analgesic / antipyretic", "Paracetamol (acetaminophen)", "Mild to moderate pain and fever."],
+          ["Non-steroidal anti-inflammatory drug (NSAID)", "Ibuprofen", "Pain, fever, and inflammatory pain; avoid in people with relevant contraindications, including peptic ulcer disease, significant kidney disease, or NSAID allergy."],
+          ["Antihistamine", "Cetirizine or chlorpheniramine maleate (CTM)", "Allergic rhinitis, itching, and urticaria; CTM may cause drowsiness."],
+          ["Antacid", "Aluminium hydroxide + magnesium hydroxide", "Occasional heartburn, acid indigestion, and dyspepsia."],
+          ["Proton-pump inhibitor (PPI)", "Omeprazole", "Frequent acid reflux or gastritis-related symptoms; not for immediate relief."],
+          ["Antitussive", "Dextromethorphan", "Dry, non-productive cough; check combination products to avoid duplicate ingredients."],
+          ["Decongestant", "Pseudoephedrine", "Nasal congestion; use cautiously and check contraindications such as hypertension."],
+          ["Antidiarrheal", "Loperamide", "Symptomatic relief of acute, non-bloody diarrhea; avoid when diarrhea is bloody or accompanied by high fever."],
+          ["Antiemetic / motion-sickness medicine", "Dimenhydrinate", "Motion sickness, nausea, and vomiting; may cause drowsiness."],
+          ["Stimulant laxative", "Bisacodyl", "Short-term relief of occasional constipation."],
+          ["Osmotic laxative", "Lactulose", "Constipation, especially when a stool-softening effect is needed."],
+          ["Oral rehydration solution", "Oral rehydration salts (ORS)", "Replacement of fluid and electrolytes lost through diarrhea or vomiting."],
+        ],
+      },
+    },
+    {
+      heading: "4. Regular and Other Prescription Medicines",
+      paragraphs: [],
+      bullets: ["Other prescription-related supplies: Needles and syringes for regularly self-administered injectable medicines (e.g., insulin; carry a copy of the prescription), and spare prescription glasses or contact lenses."],
+      checkableParagraph: true,
+      table: {
+        headers: ["DRUG TYPE", "GENERIC NAME (ACTIVE INGREDIENT)", "INDICATIONS / SYMPTOMS"],
+        rows: [
+          ["Regular prescription therapy", "All current personal prescription medicines", "Continuation of treatment for chronic conditions; bring an adequate supply."],
+          ["Altitude-illness medicine", "Acetazolamide", "Prevention and treatment of acute mountain sickness when indicated."],
+          ["Systemic corticosteroid", "Dexamethasone", "Selected cases of altitude illness or other conditions when specifically prescribed."],
+          ["Short-acting bronchodilator", "Salbutamol inhaler", "Relief of wheezing or bronchospasm in people with asthma or reversible airway disease."],
+          ["Antibiotic for travelers’ diarrhea", "Azithromycin", "Standby treatment for selected moderate-to-severe travelers’ diarrhea, only when prescribed with clear instructions."],
+          ["Antimalarial prophylaxis", "Doxycycline (only when appropriate for the destination and traveler)", "Malaria prevention for selected destinations; regimen and suitability must be determined by a travel-medicine clinician."],
+        ],
+      },
+    },
+    {
+      heading: "5. Instruments and Equipment",
+      paragraphs: [],
+      table: {
+        headers: ["ITEMS", "PURPOSE / NOTES"],
+        rows: [
+          ["Digital thermometer", "Bring plastic sheaths for oral or rectal use."],
+          ["Headlamp", "Useful in remote areas, power outages, or emergencies."],
+          ["Tweezers", "Splinter or tick removal."],
+        ],
+      },
+    },
+    {
+      heading: "6. Important Documents (Hard Copy or Digital)",
+      paragraphs: [],
+      table: {
+        headers: ["ITEMS", "PURPOSE / NOTES"],
+        rows: [
+          ["Medical summary", "Include diagnoses, regular medicines (generic names), and allergies."],
+          ["Advanced medical care directive, if applicable", "Include DNR information where relevant."],
+          ["Electrocardiogram, if indicated", "For a previously abnormal ECG, history of heart or lung disease, or age over 50 years."],
+          ["Emergency contact card", "Keep essential emergency contact details accessible."],
+          ["International Certificate of Vaccination or Prophylaxis (ICVP / Yellow Card)", "Carry when applicable."],
+          ["Travel and healthcare insurance information", "Keep policy and assistance details accessible."],
+          ["Travel-sized first-aid manual or guide", "A practical reference for basic first aid."],
+        ],
+      },
+    },
+    {
+      heading: "7. Preventive Items, as Applicable",
+      paragraphs: [],
+      table: {
+        headers: ["ITEMS", "PURPOSE / NOTES"],
+        rows: [
+          ["Condoms, barrier precautions, or other contraceptives", "As appropriate to the traveler’s needs."],
+          ["Examination gloves", "Infection control and personal protection."],
+          ["Face mask or N95 respirator", "Respiratory infection protection."],
+          ["Insect repellent and mosquito net", "Protection against insect bites and mosquito-borne disease."],
+          ["Lip balm with sun protection", "Prevention of dry, cracked lips."],
+          ["Personal hygiene supplies", "Hand sanitizer, disinfectant or wet wipes, tissues, and menstrual products."],
+          ["Sunscreen (SPF 30 or greater)", "Sun protection; zinc oxide offers broad protection for the nose, lips, and face."],
+          ["Water-purification tablets or device", "If safe drinking water may be unavailable or surface water will be used."],
+        ],
+      },
+    },
+    {
+      heading: "8. Additional Considerations When Traveling with Children",
+      paragraphs: [],
+      bullets: [
+        "Pack age-appropriate products and doses for malaria prevention, travelers’ diarrhea, and insect repellents.",
+        "Bring suitable medicines for pain, fever, and allergies, together with an oral syringe or medicine cup for accurate measurement.",
+        "Consider appropriate safety equipment, such as a car seat, flotation device, or helmet.",
+      ],
+    },
+    {
+      heading: "Note",
+      paragraphs: ["The generic ingredients above were adapted to medicines listed in Indonesian Ministry of Health essential-medicine/Formulary references and/or Indonesian regulatory or BPOM product information. Registration and legal classification can differ by strength, dosage form, and pack size; retail stock also varies by location. Check the current BPOM Cek Produk database and consult a pharmacist or clinician before purchase or use. Prescription-only medicines should not be self-started."],
+    },
+    {
+      heading: "Important Notes",
+      paragraphs: [],
+      bullets: [
+        "Prescription medicines should be selected and used according to the traveler's medical history and professional advice. Antibiotics, acetazolamide, dexamethasone, salbutamol (where prescription-classified), and antimalarial prophylaxis require clinician-directed use. Do not self-start antibiotics or corticosteroids.",
+        "Carry narcotic and psychoactive medicines in their original prescription containers. Some countries restrict these medicines, often to a 30-day supply or less; check destination-country regulations before departure.",
+        "The kit is a suggested list, not a requirement to carry every item. Adapt it to the traveler and the trip.",
+      ],
+    },
+    {
+      heading: "Source",
+      paragraphs: [
+        "Source: Centers for Disease Control and Prevention. CDC Yellow Book 2026: Health Information for International Travel. “Travel Health Kits.” Published April 23, 2025. [https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/travel-health-kits.html](https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/travel-health-kits.html)",
+        "Indonesia adaptation references: Ministry of Health, Republic of Indonesia, Formularium Nasional (KMK HK.01.07/MENKES/2197/2023); Ministry of Health regulations on medicine classification; BPOM product registration information. Verify current registration, dosage form, and pack size before use.",
+      ],
+    },
+  ],
+}
+
 export const blogs = defineContent({
   en: {
     kicker: "FIELD NOTES FROM TERBAN",
@@ -77,6 +240,7 @@ export const blogs = defineContent({
           },
         ],
       },
+      travelHealthKitPost,
     ],
     readStory: "Read the story",
     signoffEyebrow: "A COMMUNITY-ROOTED VISIT",
@@ -159,6 +323,7 @@ export const blogs = defineContent({
           },
         ],
       },
+      travelHealthKitPost,
     ],
     readStory: "Baca ceritanya",
     signoffEyebrow: "KUNJUNGAN BERBASIS MASYARAKAT",
