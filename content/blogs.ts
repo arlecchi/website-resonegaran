@@ -212,6 +212,7 @@ const avoidingBitesPost = {
     {
       heading: "3. How to Prevent Bites",
       paragraphs: [],
+      emphasizeBulletLead: true,
       images: [{ src: "/illustrations/dead-mosquito.jpg", href: "https://www.magnific.com/free-vector/cute-mosquito-dead-cartoon-vector-icon-illustration-animal-nature-icon-concept-isolated-premium_28952494.htm#fromView=keyword&page=1&position=11&uuid=6162fb13-0ee7-47b4-a7ff-4229ab822d6b&track=ais_hybrid&query=Cartoon+bug+bite", alt: "Cute cartoon illustration of a dead mosquito" }],
       bullets: [
         "Choose a registered skin-applied repellent. In Indonesia, look for mosquito-repellent lotion or spray with a valid BPOM authorization/notification as applicable. Check the product in the official BPOM Cek Produk database (https://cekbpom.pom.go.id/) and make sure the product name, manufacturer, and registration details match the packaging. Follow the age restrictions, directions, and reapplication interval on the label.",

@@ -229,7 +229,11 @@ body,.site-shell,.section-pad,.page-content{background:var(--cream);color:var(--
 .article-bullets{list-style:none;padding:0;margin:0 0 18px;line-height:1.9}
 .article-bullets li{position:relative;padding-left:20px;margin:0 0 10px}
 .article-bullets li::before{content:"";position:absolute;left:2px;top:.72em;width:6px;height:6px;border-radius:50%;background:#006d6f}
+.article-bullet-copy,.article-bullet-body{display:block}
+.article-bullet-lead{display:block;margin:0 0 3px;color:#006d6f;font:600 16px/1.45 Arial,Helvetica,sans-serif}
+.article-bullet-body{font-size:14px;line-height:1.8}
 .dark .article-bullets li::before{background:#3dbca8}
+.dark .article-bullet-lead{color:#3dbca8}
 .article-copy a{color:#006d6f;text-decoration:underline;text-underline-offset:3px;overflow-wrap:anywhere}
 .dark .travel-kit-table-wrap{border-color:#27403f}
 .dark .travel-kit-table{background:#122326;color:#c6d2c9}

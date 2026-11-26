@@ -74,7 +74,7 @@ export function BlogArticle({ slug }: { slug: string }) {
                 </div>
               )}
               {"afterTable" in section && section.afterTable?.map((paragraph, paragraphIndex) => renderParagraph(paragraph, index, paragraphIndex + 1000, "checkableParagraph" in section && section.checkableParagraph === true))}
-              {"bullets" in section && section.bullets && <ul className="article-bullets">{section.bullets.map((bullet, bulletIndex) => <li key={bulletIndex}><LinkedParagraph text={bullet}/></li>)}</ul>}
+              {"bullets" in section && section.bullets && <ul className="article-bullets">{section.bullets.map((bullet, bulletIndex) => <li key={bulletIndex}>{"emphasizeBulletLead" in section && section.emphasizeBulletLead ? <BulletWithLead text={bullet}/> : <LinkedParagraph text={bullet}/>}</li>)}</ul>}
               {"subsections" in section && section.subsections?.map((subsection, subsectionIndex) => (
                 <section className="article-subsection" key={subsectionIndex}>
                   <h3>{subsection.heading}</h3>
@@ -101,6 +101,12 @@ function LinkedParagraph({ text }: { text: string }) {
   const match = text.match(/^(.*?)\[([^\]]+)\]\((https?:\/\/[^)]+)\)(.*)$/)
   if (match) return <>{match[1]}<a href={match[3]} target="_blank" rel="noreferrer">{match[2]}</a>{match[4]}</>
   return <>{text.split(/(https?:\/\/[^\s)]+)/g).map((part, index) => /^https?:\/\//.test(part) ? <a key={index} href={part} target="_blank" rel="noreferrer">{part}</a> : part)}</>
+}
+
+function BulletWithLead({ text }: { text: string }) {
+  const match = text.match(/^(.+?\.)\s+([\s\S]+)$/)
+  if (!match) return <LinkedParagraph text={text}/>
+  return <span className="article-bullet-copy"><strong className="article-bullet-lead">{match[1]}</strong><span className="article-bullet-body"><LinkedParagraph text={match[2]}/></span></span>
 }
 
 function ArticleImage({ image }: { image: { src: string; href?: string; alt: string } }) {
