@@ -67,7 +67,7 @@ export function BlogArticle({ slug }: { slug: string }) {
                       const itemId = `${index}-${rowIndex}`
                       return <tr key={rowIndex}>
                         {hasChecklist && <td className="check-column"><label className="travel-kit-check"><input type="checkbox" aria-label={`Check off: ${row.length > 2 ? `${row[0]} — ${row[1]}` : row[0]}`} checked={!!checkedItems[itemId]} onChange={(event) => setItemChecked(itemId, event.target.checked)}/><span className="sr-only">Check off: {row[0]}</span></label></td>}
-                        {row.map((cell, cellIndex) => <td key={cellIndex}>{cell}</td>)}
+                        {row.map((cell, cellIndex) => <td key={cellIndex}><LinkedParagraph text={cell}/></td>)}
                       </tr>
                     })}</tbody>
                   </table>

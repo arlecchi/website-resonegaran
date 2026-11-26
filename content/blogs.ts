@@ -271,6 +271,99 @@ const avoidingBitesPost = {
   ],
 }
 
+const vaccinationGuidePost = {
+  slug: "vaccination-guide-terban-yogyakarta",
+  category: "TRAVEL HEALTH",
+  title: "VACCINATION GUIDE",
+  date: "",
+  image: "photo-1505751172876-fa1923c5c528",
+  imageAlt: "Travel health and medical preparation",
+  excerpt: "There is no special vaccination requirement just to visit Kota Yogyakarta.",
+  deck: "For Visitors to Terban, Kota Yogyakarta, Indonesia",
+  sections: [
+    {
+      heading: "Before Your Visit",
+      paragraphs: ["There is no special vaccination requirement just to visit Kota Yogyakarta."],
+      bullets: [
+        "For a typical short city holiday, check that your routine vaccinations are up to date.",
+        "Additional travel vaccines depend on your age, previous doses, health, length of stay, food and water exposure, and planned activities. This guide is specific to Kota Yogyakarta; it does not assume that every risk reported elsewhere in Indonesia applies equally to a short urban visit.",
+      ],
+    },
+    {
+      heading: "1. Routine Vaccinations",
+      paragraphs: ["These are vaccines people should receive according to their age and vaccination history, whether or not they are traveling. Tourists should check their records before departure."],
+      table: {
+        headers: ["VACCINE", "WHO SHOULD CHECK IT?", "WHY IT MATTERS"],
+        rows: [
+          ["MMR (measles, mumps, rubella)", "Children and adults without evidence of immunity; international travelers should generally have 2 documented doses or accepted evidence of immunity.", "Measles spreads easily in crowded places such as airports, public transport and tourist attractions."],
+          ["Diphtheria, tetanus and pertussis (DTP/Tdap/Td)", "All age groups according to childhood schedule and adult booster history.", "Protects against respiratory infection (diphtheria/pertussis) and tetanus after wounds."],
+          ["Polio", "Children should complete routine doses; adults should check if their primary series is complete.", "Prevents poliomyelitis.\nExtra doses depend on outbreak or destination-specific advice."],
+          ["Influenza", "Everyone aged 6 months and older, especially young children, pregnant people, older adults and people with chronic illness.", "Annual protection against seasonal influenza, particularly useful during flights and crowded activities."],
+          ["Varicella (chickenpox)", "People aged 12 months and older without evidence of immunity, if eligible.", "Prevents chickenpox and complications.\nNot suitable for some pregnant or immunocompromised people."],
+        ],
+      },
+      bullets: [
+        "Children should also have their Indonesian routine immunizations reviewed using their Buku KIA/immunization record: https://www.halodoc.com/artikel/ini-jadwal-imunisasi-dasar-lengkap-anak-rekomendasi-idai-berdasarkan-usia-dan-jenis?srsltid=AYCX9vL7wGpjiHNfd0w67BS6nqASc5_S5ywV5Ig-a6WnYEFGCsXFmvLk",
+        "Adults can compare their history with the PAPDI Adult Immunization Schedule 2026: https://satgasimunisasipapdi.com/jadwal-imunisasi-dewasa-2026/",
+      ],
+    },
+    {
+      heading: "2. Travel Vaccinations",
+      paragraphs: ["These are additional vaccines considered because of travel-related exposure. They are not automatically needed by every tourist."],
+      table: {
+        headers: ["VACCINE", "AGE / WHO", "WHEN TO CONSIDER IT FOR KOTA YOGYAKARTA"],
+        rows: [
+          ["Hepatitis A", "Unvaccinated travelers ≥1 year; infants 6–11 months may receive an early travel dose.", "• Consider if eating widely at local food stalls, staying with local households, or visiting for an extended period.\n• Spreads through contaminated food and water.\n• Usual adult series: 2 doses, 6–12 months apart; infant travel dose does not count toward routine series."],
+          ["Typhoid", "Most travelers; injectable vaccine commonly used from age 2 years (confirm product label).", "• Consider for longer stays or frequent local-food/street-food exposure.\n• Usual injectable schedule: 1 dose at least 2 weeks before exposure; booster depends on product and ongoing risk."],
+          ["Hepatitis B", "Unvaccinated travelers of all ages.", "• Consider if not previously vaccinated, particularly if medical/dental procedures, tattoos/piercings, sexual contact or blood exposure may occur.\n• Common adult schedule: 0, 1 and 6 months."],
+          ["Rabies (pre-exposure)", "Children or adults with increased animal exposure risk.", "• Not usually needed for ordinary city sightseeing.\n• Consider for animal handlers, veterinary work, or frequent contact with dogs/cats/monkeys.\n• Common schedule: 2 doses on days 0 and 7. Any bite/scratch still needs urgent medical care."],
+          ["Japanese encephalitis (JE)", "Long-stay travelers (usually ≥1 month), frequent visitors to endemic areas, or selected short-stay travelers with rural exposure; product age limits apply.", "• Usually not needed for a short trip limited to central Kota Yogyakarta.\n• Consider only if the itinerary includes extended rural/outdoor exposure in JE-risk areas."],
+          ["Yellow fever", "Travelers ≥9 months arriving from a country with yellow-fever transmission risk, if entry rules require it.", "• Not needed for protection in Yogyakarta.\n• May be required for entry depending on the country visited before Indonesia."],
+        ],
+      },
+    },
+    {
+      heading: "3. Nearest Health Facilities",
+      paragraphs: ["Kota Yogyakarta has a wide range of healthcare facilities, including hospitals, community health centres (Puskesmas), and private clinics. This list focuses on facilities located specifically in Kelurahan Terban, Gondokusuman District, to help visitors identify nearby options for vaccinations and medical care."],
+      table: {
+        headers: ["HEALTHCARE FACILITY", "TYPE", "OFFICIAL WEBSITE"],
+        rows: [
+          ["RS Panti Rapih", "General hospital", "https://pantirapih.or.id/"],
+          ["RS Mata Dr. YAP", "Specialist eye hospital", "https://yap.or.id/"],
+          ["Puskesmas Gondokusuman II", "Community health centre", "https://gondokusuman2pusk.jogjakota.go.id/"],
+        ],
+      },
+      afterTable: ["This is a directory, not a ranking or endorsement."],
+      bullets: [
+        "Some hospitals provide specialist services rather than a full range of emergency care.",
+        "In a medical emergency, contact local emergency services or go to the nearest hospital emergency department.",
+        "Confirm the hospital’s current emergency and service availability directly.",
+      ],
+    },
+    {
+      heading: "4. Before Getting a Vaccine",
+      paragraphs: [],
+      bullets: [
+        "Bring your vaccination record (vaccine card).",
+        "Ask the clinic whether the vaccine is available, what age it is licensed for, how many doses are needed, and the total cost.",
+        "Check the product's Indonesian authorization through BPOM Cek Produk: https://cekbpom.pom.go.id/",
+        "Some vaccines are not stocked at every Puskesmas. For international certificates (e-ICV) or special travel vaccines, ask whether referral to an authorized international vaccination center is needed.",
+      ],
+    },
+    {
+      heading: "Trusted References",
+      paragraphs: [],
+      bullets: [
+        "1.\tCDC. Indonesia – Traveler View. https://wwwnc.cdc.gov/travel/destinations/traveler/none/indonesia",
+        "2.\tSatgas Imunisasi Dewasa PAPDI. Jadwal Imunisasi Dewasa 2026. https://satgasimunisasipapdi.com/jadwal-imunisasi-dewasa-2026/",
+        "3.\tKementerian Kesehatan RI. Jadwal Imunisasi Program (KMK HK.01.07/MENKES/1098/2024 and applicable amendments). https://jdih.kemkes.go.id/",
+        "4.\tDinas Kesehatan Kota Yogyakarta. Official Puskesmas directory. https://kesehatan.jogjakota.go.id/pages/kontak/direktori /",
+        "5.\tBPOM. Cek Produk. https://cekbpom.pom.go.id/",
+      ],
+    },
+  ],
+}
+
 export const blogs = defineContent({
   en: {
     kicker: "FIELD NOTES FROM TERBAN",
@@ -349,6 +442,7 @@ export const blogs = defineContent({
       },
       travelHealthKitPost,
       avoidingBitesPost,
+      vaccinationGuidePost,
     ],
     readStory: "Read the story",
     signoffEyebrow: "A COMMUNITY-ROOTED VISIT",
@@ -433,6 +527,7 @@ export const blogs = defineContent({
       },
       travelHealthKitPost,
       avoidingBitesPost,
+      vaccinationGuidePost,
     ],
     readStory: "Baca ceritanya",
     signoffEyebrow: "KUNJUNGAN BERBASIS MASYARAKAT",
