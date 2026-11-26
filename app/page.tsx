@@ -16,6 +16,7 @@ import { info } from "@/content/info"
 import { blogs } from "@/content/blogs"
 import { VillageMap } from "@/components/village-map"
 import { InfoHistory } from "@/components/info-history"
+import { BlogCards } from "@/components/blog-cards"
 
 const img = (id: string, width = 1200) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=85`
 const pad = (n: number) => String(n).padStart(2, "0") // 1 → "01"
@@ -29,6 +30,10 @@ export default function Page() {
   const { resolvedTheme, setTheme } = useTheme()
   const [mounted, setMounted] = useState(false)
   useEffect(() => setMounted(true), [])
+  useEffect(() => {
+    const requested = new URLSearchParams(window.location.search).get("section") as PageId | null
+    if (requested && PAGES.includes(requested)) setActive(requested)
+  }, [])
   const isDark = mounted && resolvedTheme === "dark"
   const go = (page: PageId) => { setActive(page); setMobileOpen(false); window.scrollTo({ top: 0, behavior: "smooth" }) }
 
@@ -95,7 +100,7 @@ export default function Page() {
       {active === "info" && <PageFrame go={go} kicker={tInfo.kicker} title={tInfo.title} lead={tInfo.lead} number="05"><InfoHistory go={go}/></PageFrame>}
 
       {/* 06 — BLOGS · text in content/blogs.ts */}
-      {active === "blogs" && <PageFrame go={go} kicker={tBlogs.kicker} title={tBlogs.title} lead={tBlogs.lead} number="06"><div className="blog-grid">{tBlogs.posts.map((b,i)=><article className={`blog-card blog-${i+1}`} key={i}><div className="blog-image" style={{backgroundImage:`url(${img(b.image)})`}}><span>{b.category}</span></div><div className="blog-meta"><span>{b.date}</span><span>{pad(i+1)} / {pad(tBlogs.posts.length)}</span></div><h3>{b.title}</h3><p>{b.excerpt}</p><button className="under-link" onClick={()=>go("info")}>{tBlogs.readStory} <ArrowRight size={15}/></button></article>)}</div><div className="blog-signoff"><span className="eyebrow">{tBlogs.signoffEyebrow}</span><h3>{tBlogs.signoffTitle}</h3><p>{tBlogs.signoffText}</p><button className="button dark-button" onClick={()=>go("profile")}>{tBlogs.signoffButton} <ArrowRight size={16}/></button></div></PageFrame>}
+      {active === "blogs" && <PageFrame go={go} kicker={tBlogs.kicker} title={tBlogs.title} lead={tBlogs.lead} number="06"><BlogCards posts={tBlogs.posts} readStory={tBlogs.readStory}/><div className="blog-signoff"><span className="eyebrow">{tBlogs.signoffEyebrow}</span><h3>{tBlogs.signoffTitle}</h3><p>{tBlogs.signoffText}</p><button className="button dark-button" onClick={()=>go("profile")}>{tBlogs.signoffButton} <ArrowRight size={16}/></button></div></PageFrame>}
     </main>
   )
 }
