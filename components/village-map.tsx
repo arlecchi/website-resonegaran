@@ -22,7 +22,11 @@ export function VillageMap({ selected, onSelect }: Props) {
   const { embed: embedSrc, directions: directionsUrl, open: openUrl } = mapLinks(target.lat, target.lng, place ? 17 : 15, place?.mapQuery)
 
   return (
-    <div className="map-layout">
+    <>
+      <figure className="route-map-poster">
+        <img src="/images/resonegaran-route-map.png" alt="Illustrated route map of Kampung Wisata Resonegaran, with four neighborhood destinations" />
+      </figure>
+      <div className="map-layout">
       <div className="map-embed">
         {/* Changing `src` makes the iframe reload at the new spot. */}
         <iframe
@@ -72,6 +76,7 @@ export function VillageMap({ selected, onSelect }: Props) {
         </a>
         <small className="map-note">{t.note}</small>
       </aside>
-    </div>
+      </div>
+    </>
   )
 }
