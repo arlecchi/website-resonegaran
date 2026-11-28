@@ -20,7 +20,7 @@ export function BlogCards({ posts, readStory }: { posts: BlogPost[]; readStory: 
             </div>
             {post.date && <div className="blog-meta"><span>{post.date}</span></div>}
             <h3>{post.title}</h3>
-            <p>{post.excerpt}</p>
+            <p>{post.deck}</p>
             <span className="under-link">{readStory} <ArrowRight size={15}/></span>
           </Link>
         </article>
