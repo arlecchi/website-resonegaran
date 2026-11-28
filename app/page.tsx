@@ -17,6 +17,7 @@ import { blogs } from "@/content/blogs"
 import { VillageMap } from "@/components/village-map"
 import { InfoHistory } from "@/components/info-history"
 import { BlogCards } from "@/components/blog-cards"
+import { SocialLinks } from "@/components/social-links"
 
 const img = (id: string, width = 1200) => `https://images.unsplash.com/${id}?auto=format&fit=crop&w=${width}&q=85`
 const pad = (n: number) => String(n).padStart(2, "0") // 1 → "01"
@@ -114,4 +115,4 @@ function LanguageToggle({label}:{label:string}){
 }
 
 function PageFrame({kicker,title,lead,number,children,go}:{kicker:string,title:string,lead:string,number:string,children:React.ReactNode,go:(page:PageId)=>void}){return <><section className="page-heading"><div className="eyebrow"><span/>{kicker}</div><div className="heading-grid"><h1><Rich text={title}/></h1><p>{lead}</p></div><span className="heading-number">{number} <i/> 06</span></section><section className="page-content">{children}</section><Footer go={go}/></>}
-function Footer({go}:{go:(page:PageId)=>void}){const c = useContent(common); return <footer className="footer"><button className="brand footer-brand" onClick={()=>go("profile")} aria-label={c.homeLabel}><img className="brand-logo" src="/kastaraya-logo.png" alt={c.logoAlt}/></button><p><Rich text={c.footerTagline}/></p><div className="footer-links">{PAGES.map(p=><button key={p} onClick={()=>go(p)}>{c.nav[p]}</button>)}</div><span className="copyright">{c.copyright}</span></footer>}
+function Footer({go}:{go:(page:PageId)=>void}){const c = useContent(common); return <footer className="footer"><button className="brand footer-brand" onClick={() => go("profile")} aria-label={c.homeLabel}><img className="brand-logo" src="/kastaraya-logo.png" alt={c.logoAlt}/></button><p><Rich text={c.footerTagline}/></p><SocialLinks/><span className="copyright">{c.copyright}</span></footer>}

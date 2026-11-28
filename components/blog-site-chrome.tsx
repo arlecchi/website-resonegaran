@@ -6,6 +6,7 @@ import { ArrowUpRight, Menu, Moon, Sun, X } from "lucide-react"
 import { useTheme } from "next-themes"
 import { common, PAGES, type PageId } from "@/content/common"
 import { useContent, useLanguage } from "@/lib/i18n"
+import { SocialLinks } from "@/components/social-links"
 
 function sectionHref(page: PageId) {
   return page === "blogs" ? "/?section=blogs" : `/?section=${page}`
@@ -42,7 +43,7 @@ export function BlogSiteFooter() {
     <footer className="footer">
       <Link className="brand footer-brand" href={sectionHref("profile")} aria-label={c.homeLabel}><img className="brand-logo" src="/kastaraya-logo.png" alt={c.logoAlt}/></Link>
       <p>{c.footerTagline.split("\n").map((line, index) => <span key={index}>{index > 0 && <br/>}{line}</span>)}</p>
-      <nav className="footer-links" aria-label="Footer navigation">{PAGES.map((page) => <Link key={page} href={sectionHref(page)}>{c.nav[page]}</Link>)}</nav>
+      <SocialLinks/>
       <span className="copyright">{c.copyright}</span>
     </footer>
   )
