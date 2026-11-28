@@ -46,27 +46,32 @@ export function BlogArticle({ slug }: { slug: string }) {
       <BlogSiteHeader/>
       <div className="article-return"><Link className="article-back" href="/blogs"><ArrowLeft size={15}/>{t.archiveBack}</Link></div>
       <article>
-        <div className={slug === "avoiding-insect-and-arthropod-bites-indonesia" ? "article-cover article-cover-bug" : "article-cover"} role="img" aria-label={post.imageAlt} style={{ backgroundImage: `url(${imageUrl(post.image)})` }}/>
+        <div className={slug === "avoiding-insect-and-arthropod-bites-indonesia" ? "article-cover article-cover-bug" : slug === "around-the-table-safe-food-water" ? "article-cover article-cover-food" : "article-cover"} role="img" aria-label={post.imageAlt} style={{ backgroundImage: `url(${imageUrl(post.image)})` }}/>
         <header className="article-header">
           <span className="article-category">{post.category}</span>
           <h1>{post.title}</h1>
           <p className="article-deck">{post.deck}</p>
           <div className="article-byline"><span>{t.articleLabel}</span>{post.date && <span>{post.date}</span>}</div>
         </header>
+        {"intro" in post && post.intro && <p className="article-intro">{post.intro}</p>}
         <div className="article-copy">
-          {post.sections.map((section, index) => (
+          {post.sections.map((section, index) => {
+            const tableHasChecklist = hasChecklist || ("checklist" in section && section.checklist === true)
+            return (
             <section className="article-section" key={`${section.heading}-${index}`}>
               <h2>{section.heading}</h2>
+              {"imagesBeforeText" in section && section.imagesBeforeText && "images" in section && section.images?.map((image, imageIndex) => <ArticleImage key={`before-${imageIndex}`} image={image}/>) }
               {section.paragraphs.map((paragraph, paragraphIndex) => renderParagraph(paragraph, index, paragraphIndex, "checkableParagraph" in section && section.checkableParagraph === true))}
-              {"images" in section && section.images?.map((image, imageIndex) => <ArticleImage key={imageIndex} image={image}/>) }
+              {!("imagesBeforeText" in section && section.imagesBeforeText) && "images" in section && section.images?.map((image, imageIndex) => <ArticleImage key={imageIndex} image={image}/>) }
+              {"beforeTableBullets" in section && section.beforeTableBullets && <ul className="article-bullets">{section.beforeTableBullets.map((bullet, bulletIndex) => <li key={bulletIndex}><LinkedParagraph text={bullet}/></li>)}</ul>}
               {"table" in section && section.table && (
                 <div className="travel-kit-table-wrap" role="region" aria-label={`${section.heading} table`} tabIndex={0}>
-                  <table className={hasChecklist ? "travel-kit-table checklist-table" : "travel-kit-table"}>
-                    <thead><tr>{hasChecklist && <th className="check-column" scope="col"><span className="sr-only">Packed</span></th>}{section.table.headers.map((header, headerIndex) => <th key={headerIndex} scope="col">{header}</th>)}</tr></thead>
+                  <table className={tableHasChecklist ? "travel-kit-table checklist-table" : "travel-kit-table"}>
+                    <thead><tr>{tableHasChecklist && <th className="check-column" scope="col"><span className="sr-only">Packed</span></th>}{section.table.headers.map((header, headerIndex) => <th key={headerIndex} scope="col">{header}</th>)}</tr></thead>
                     <tbody>{section.table.rows.map((row, rowIndex) => {
                       const itemId = `${index}-${rowIndex}`
                       return <tr key={rowIndex}>
-                        {hasChecklist && <td className="check-column"><label className="travel-kit-check"><input type="checkbox" aria-label={`Check off: ${row.length > 2 ? `${row[0]} — ${row[1]}` : row[0]}`} checked={!!checkedItems[itemId]} onChange={(event) => setItemChecked(itemId, event.target.checked)}/><span className="sr-only">Check off: {row[0]}</span></label></td>}
+                        {tableHasChecklist && <td className="check-column"><label className="travel-kit-check"><input type="checkbox" aria-label={`Check off: ${row.length > 2 ? `${row[0]} — ${row[1]}` : row[0]}`} checked={!!checkedItems[itemId]} onChange={(event) => setItemChecked(itemId, event.target.checked)}/><span className="sr-only">Check off: {row[0]}</span></label></td>}
                         {row.map((cell, cellIndex) => <td key={cellIndex}><LinkedParagraph text={cell}/></td>)}
                       </tr>
                     })}</tbody>
@@ -80,10 +85,12 @@ export function BlogArticle({ slug }: { slug: string }) {
                   <h3>{subsection.heading}</h3>
                   {"images" in subsection && subsection.images?.map((image, imageIndex) => <ArticleImage key={imageIndex} image={image}/>) }
                   {subsection.paragraphs.map((paragraph, paragraphIndex) => <p key={paragraphIndex}><LinkedParagraph text={paragraph}/></p>)}
+                  {"bullets" in subsection && subsection.bullets && <ul className="article-bullets">{subsection.bullets.map((bullet, bulletIndex) => <li key={bulletIndex}><LinkedParagraph text={bullet}/></li>)}</ul>}
+                  {"afterBullets" in subsection && subsection.afterBullets?.map((paragraph, paragraphIndex) => <p key={`after-${paragraphIndex}`}><LinkedParagraph text={paragraph}/></p>)}
                 </section>
               ))}
             </section>
-          ))}
+          )})}
         </div>
       </article>
       <footer className="article-footer">

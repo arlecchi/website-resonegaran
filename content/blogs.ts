@@ -364,6 +364,322 @@ const vaccinationGuidePost = {
   ],
 }
 
+const sunProtectionPost = {
+  slug: "sun-and-eye-protection-terban",
+  category: "TRAVEL HEALTH",
+  title: "Beneath The Sun: A Quick Guide to Skin And Eye Protection for Visitors Enjoying Outdoor Activities in Indonesia",
+  date: "",
+  image: "/images/article-4/online-doctor-recommending-sunscreen.jpg",
+  imageAlt: "Online doctor recommending sunscreen. Phone screen, bottle of sunblock, tube of lotion flat illustration. Skin protection.",
+  excerpt: "Indonesia’s tropical location means UV exposure can be high throughout the year. Too much UV can cause sunburn, premature skin ageing, eye damage and skin cancer.",
+  deck: "THE RESONEGARAN VISITOR'S GUIDE #4",
+  sections: [
+    {
+      heading: "1. Why Sun Protection Matters?",
+      paragraphs: ["Indonesia’s tropical location means UV exposure can be high throughout the year. Too much UV can cause sunburn, premature skin ageing, eye damage and skin cancer. UV rays can still reach you on cloudy days. UVB mainly causes sunburn and direct DNA damage; UVA penetrates deeper and contributes to skin ageing and skin damage. Protection matters for every skin tone."],
+      images: [{ src: "/images/article-4/weather.gif", alt: "Weather illustration for sun protection" }],
+      imagesBeforeText: true,
+    },
+    {
+      heading: "2. Check The UV Index",
+      paragraphs: ["The UV Index estimates the strength of skin-damaging UV radiation. The higher the number, the greater the need for protection."],
+      images: [{ src: "/images/article-4/sunny-day-cuate.png", alt: "Sunny day illustration" }],
+      imagesBeforeText: true,
+      beforeTableBullets: ["💕 Check the daily forecast from BMKG: https://cews.bmkg.go.id/dashboard-custom/prediksi-UVI-indonesia/"],
+      table: {
+        headers: ["UV Index", "Risk", "What to Do?"],
+        rows: [
+          ["0–2", "Low", "Basic protection for prolonged outdoor exposure."],
+          ["3–5", "Moderate", "Seek shade, wear protective clothing and apply sunscreen."],
+          ["6–7", "High", "Reduce time in direct sun; use full sun protection."],
+          ["8–10", "Very high", "Avoid midday sun as much as possible; protect skin and eyes."],
+          ["11+", "Extreme", "Minimise outdoor exposure during peak UV hours."],
+        ],
+      },
+    },
+    {
+      heading: "3. Your Sun-Protection Checklist",
+      paragraphs: [],
+      images: [{ src: "/images/article-4/checklist.gif", alt: "Checklist illustration" }],
+      imagesBeforeText: true,
+      bullets: [
+        "Limit prolonged direct sun, especially between 10 a.m. and 4 p.m.",
+        "Find shade → use trees, buildings, umbrellas or shaded rest areas.",
+        "Cover up by choosing lightweight, long-sleeved clothing and trousers. UPF 50 clothing blocks about 98% of UV.",
+        "Wear a wide-brimmed hat that shades the face, ears and neck.",
+        "Protect your eyes with sunglasses labelled UV400 or 100% UVA/UVB protection.",
+        "Apply broad-spectrum sunscreen (SPF 30 or higher); SPF 50+ is a useful choice for long outdoor activities.",
+        "Use SPF 30+ lip balm.",
+      ],
+    },
+    {
+      heading: "4. Sunscreen: Use It Properly",
+      paragraphs: [],
+      images: [{ src: "/images/article-4/sun-rise.gif", alt: "Sunrise illustration" }],
+      imagesBeforeText: true,
+      bullets: [
+        "Choose broad-spectrum protection against both UVA and UVB, SPF 30 or higher.",
+        "Apply generously and evenly to all exposed skin. Do not forget the ears, neck, backs of hands and tops of feet.",
+        "Apply about 15–20 minutes before going outdoors when using chemical-filter sunscreen. Mineral-only sunscreen works immediately.",
+        "Reapply every 2 hours, and after swimming, heavy sweating or towel-drying.",
+        "For a full-body application, adults generally need about 30–35 mL (roughly a shot glass).",
+        "Sunscreen is only one layer of protection. It does not make prolonged sunbathing safe.",
+      ],
+    },
+    {
+      heading: "5. Protect Your Eyes: Choose Sunglasses Wisely",
+      paragraphs: [],
+      images: [{ src: "/images/article-4/happy-sun.gif", alt: "Happy sun illustration" }],
+      imagesBeforeText: true,
+      bullets: [
+        "Look for “100% UVA/UVB protection”, “100% UV protection” or “UV400”.",
+        "Large lenses and wraparound frames reduce UV entering from the sides.",
+        "Polarized lenses reduce glare from water and roads, but polarization alone does not block UV. Check the UV label.",
+        "Darker lenses, mirror coatings, colour and a high price do not guarantee UV protection.",
+        "For sports, consider impact-resistant polycarbonate or Trivex lenses.",
+        "⚠ UV exposure can cause painful photokeratitis (an eye “sunburn”) and is associated with cataracts and other eye conditions. Ordinary sunglasses are not safe for looking directly at the sun, solar eclipses, welding or tanning lamps.",
+      ],
+    },
+    {
+      heading: "6. Skin Cancer/Melanoma: Know The Warning Signs",
+      paragraphs: ["UV exposure can damage skin-cell DNA. Intense exposure during childhood is an important risk factor for melanoma later in life. People with darker skin can also develop skin cancer."],
+      images: [{ src: "/images/article-4/dna.gif", alt: "DNA illustration" }],
+      imagesBeforeText: true,
+      table: {
+        headers: ["ABCDE", "What to Look For?"],
+        rows: [
+          ["A – Asymmetry", "One half does not match the other."],
+          ["B – Border", "Irregular, blurred or poorly defined edges."],
+          ["C – Colour", "Uneven colour or several shades."],
+          ["D – Diameter", "Often over 6 mm, but can be smaller."],
+          ["E – Evolving", "A spot changes in size, shape or colour, or starts itching, bleeding or becoming tender."],
+        ],
+      },
+      afterTable: ["Melanoma may occur on the palms, soles or beneath nails.", "Not every melanoma follows the ABCDE pattern.", "⚠ Get a new, unusual or changing spot checked by a healthcare professional. Also seek assessment for a sore that does not heal or a new dark streak under a nail."],
+    },
+    {
+      heading: "7. Extra Care For Children",
+      paragraphs: [],
+      images: [{ src: "/images/article-4/happy-baby.gif", alt: "Happy baby illustration" }],
+      imagesBeforeText: true,
+      bullets: [
+        "<6 months: keep infants out of direct sunlight; use shade, light covering clothing, a hat and a stroller sunshade.",
+        "≥ 6 months: use an age-appropriate sunscreen. Mineral filters such as zinc oxide and titanium dioxide are often preferred for sensitive skin.",
+        "Use hats and protective clothing, and avoid prolonged outdoor activity during intense midday sun.",
+      ],
+    },
+    {
+      heading: "8. Medicines, Citrus And Sun Sensitivity",
+      paragraphs: [
+        "Some medicines can make skin more sensitive to sunlight. Examples: doxycycline and other tetracyclines, some fluoroquinolones and sulfonamides, certain NSAIDs (such as ibuprofen, naproxen and ketoprofen), retinoids, furosemide, methotrexate and some cancer treatments. Ask a healthcare professional about extra precautions; do not stop prescribed medicines yourself.",
+        "Lime juice and some citrus oils can react with UVA and cause phytophotodermatitis.",
+        "Redness, pain or blisters may appear 1–2 days later, followed by brown marks that can last weeks or months.",
+        "⚠ Wash citrus juice off the skin promptly before going outdoors.",
+      ],
+      images: [{ src: "/images/article-4/virtual-reality.gif", alt: "Virtual reality illustration" }],
+      imagesBeforeText: true,
+    },
+    {
+      heading: "9. If You Get Sunburned",
+      paragraphs: [],
+      images: [{ src: "/images/article-4/refreshing-from-summer-heat.gif", alt: "Refreshing from summer heat illustration" }],
+      imagesBeforeText: true,
+      bullets: [
+        "Move to a cool, shaded place and avoid further sun exposure.",
+        "Cool the skin with cool water or a cool, wet compress.",
+        "Apply a gentle moisturiser and drink fluids.",
+        "Do not pop blisters.",
+        "Seek medical care for extensive blistering, severe pain, fever, chills, nausea, vomiting or headache.",
+      ],
+    },
+    {
+      heading: "10. Sunscreen & Sunglasses: Quick Myth Check",
+      paragraphs: [],
+      images: [{ src: "/images/article-4/specs.gif", alt: "Glasses illustration" }],
+      imagesBeforeText: true,
+      table: {
+        headers: ["Myth", "Fact"],
+        rows: [
+          ["“Darker sunscreen or sunglasses protect better.”", "Lens darkness does not indicate UV protection. For sunscreen, check broad-spectrum SPF; for glasses, check UV400/100% UVA-UVB."],
+          ["“Polarized means UV-protective.”", "Polarization reduces glare; it does not automatically block UV."],
+          ["“Only fair skin needs sun protection.”", "All skin tones can experience UV damage and skin cancer."],
+          ["“Sunscreen alone is enough.”", "Shade, clothing, hats and sunglasses are also important."],
+        ],
+      },
+    },
+    {
+      heading: "References",
+      paragraphs: [],
+      bullets: [
+        "[1] Fivenson D, Norton SA. Sun exposure in travelers. In: Halsey ES, Angelo KM, Barnett ED, et al., editors. CDC Yellow Book 2026: Health Information for International Travel [Internet]. Atlanta (GA): Centers for Disease Control and Prevention. Available from: https://www.cdc.gov/yellow-book/hcp/environmental-hazards-risks/sun-exposure-in-travelers.html",
+        "[2] Morriss S, Scardamaglia L. Sun protection: a practical guide for health professionals. Aust Prescr. 2025;48(5):173-178. doi:10.18773/austprescr.2025.046. https://pubmed.ncbi.nlm.nih.gov/41164102/",
+        "[3] American Academy of Ophthalmology. How to choose the best sunglasses to avoid sun damage [Internet]. San Francisco: American Academy of Ophthalmology; 2026 Jul 20. Available from: https://www.aao.org/eye-health/diseases/sunglasses-3",
+        "[4] American Academy of Ophthalmology. Recommended types of sunglasses [Internet]. San Francisco: American Academy of Ophthalmology; 2015 Dec 12. Available from: https://www.aao.org/eye-health/glasses-contacts/sunglasses-recommended-types",
+        "[5] American Optometric Association. Ultraviolet (UV) protection [Internet]. St. Louis (MO): American Optometric Association; [date unknown]. Available from: https://www.aoa.org/healthy-eyes/caring-for-your-eyes/uv-protection",
+        "[6] American Academy of Dermatology Association. What to look for: ABCDEs of melanoma [Internet]. Rosemont (IL): AAD; [date unknown]. Available from: https://www.aad.org/public/diseases/skin-cancer/abcdes-melanoma",
+        "[7] Badan Meteorologi, Klimatologi, dan Geofisika. Prediksi indeks UV harian [Internet]. Jakarta: BMKG; [date unknown]. Available from: https://cews.bmkg.go.id/dashboard-custom/prediksi-UVI-indonesia/",
+      ],
+    },
+  ],
+}
+
+const safeFoodWaterPost = {
+  slug: "around-the-table-safe-food-water",
+  category: "TRAVEL HEALTH",
+  title: "Around The Table: A Quick Guide to Safe Food And Drinking Water for Visitors in Kampung Resonegaran, Yogyakarta, Indonesia",
+  date: "",
+  image: "/images/article-5/rotten-food.jpg",
+  imageAlt: "Rotten food 2x2 design concept set of four compositions consisting of toxic moldy expired products isolated vector illustration",
+  excerpt: "Heritage walks, museum tours, batik workshops, and traditional wellness experiences are wonderful ways to explore Resonegaran. Stay comfortable throughout your visit by choosing safer food and drinks, keeping your hands clean, and knowing when to seek help!",
+  deck: "THE RESONEGARAN VISITOR'S GUIDE #5",
+  intro: "Heritage walks, museum tours, batik workshops, and traditional wellness experiences are wonderful ways to explore Resonegaran. Stay comfortable throughout your visit by choosing safer food and drinks, keeping your hands clean, and knowing when to seek help!",
+  sections: [
+    {
+      heading: "1. Choose Food Safely",
+      paragraphs: ["Choose food that is thoroughly cooked, served hot, and handled hygienically."],
+      images: [{ src: "/images/article-5/eating-healthy-food.gif", alt: "Eating healthy food illustration" }],
+      imagesBeforeText: true,
+      table: {
+        headers: ["SAFER CHOICES", "AVOID/USE CAUTION"],
+        rows: [
+          ["✅ Freshly cooked food served hot or steaming.", "❌ Cooked food left at room temperature for a long time or served lukewarm."],
+          ["✅ Meat, fish, seafood, and eggs cooked thoroughly.", "❌ Raw or undercooked meat, seafood, or eggs."],
+          ["✅ Whole fruit that you can wash with safe water and peel yourself.", "❌ Pre-cut fruit, salads, raw vegetables, and uncooked garnishes of uncertain hygiene."],
+          ["✅ Pasteurized milk and dairy products in sealed packaging.", "❌ Unpasteurized dairy products or products stored open without refrigeration."],
+          ["✅ Dry snacks or factory-packaged food in intact, sealed packaging.", "❌ Uncovered food exposed to dust, insects, or frequent handling."],
+        ],
+      },
+      subsections: [
+        {
+          heading: "🥗 Street Food & Local Snacks",
+          paragraphs: [],
+          bullets: [
+            "Choose vendors with clean food-preparation areas and utensils.",
+            "Prefer food cooked to order and served piping hot.",
+            "Avoid food displayed uncovered, exposed to flies, or left at room temperature for an extended period.",
+          ],
+          afterBullets: ["⚠ Remember: perishable food should not be left at room temperature for more than 2 hours. When the outdoor temperature is above 32°C (90°F), limit this to 1 hour."],
+        },
+      ],
+    },
+    {
+      heading: "2. Drink Safely",
+      paragraphs: [],
+      images: [{ src: "/images/article-5/hydratation.gif", alt: "Hydration illustration" }],
+      imagesBeforeText: true,
+      table: {
+        headers: ["CHOOSE", "AVOID"],
+        rows: [
+          ["✅ Factory-sealed bottled water; check the seal and open it yourself.", "❌ Bottles with damaged seals or drinks from an unknown water source."],
+          ["✅ Hot drinks freshly prepared and served steaming hot.", "❌ Lukewarm or room-temperature drinks when water safety is uncertain."],
+          ["✅ Drinks without ice, unless the ice is known to be made from safe water.", "❌ Ice of unknown origin."],
+          ["✅ Drinking water from a dispenser or source confirmed to be safe.", "❌ Tap water that has not been confirmed safe for drinking or brushing your teeth."],
+        ],
+      },
+      afterTable: ["☕ Water may look clear and still contain harmful germs. Make sure to:"],
+      bullets: [
+        "Check the bottle seal and cap before drinking.",
+        "Avoid freshly squeezed juice prepared by others if the cleanliness of the fruit, washing water, or equipment cannot be confirmed.",
+        "Use safe water to wash fruit that will be eaten raw.",
+      ],
+    },
+    {
+      heading: "3. Jamu & Traditional Wellness Experience",
+      paragraphs: ["Watching how jamu (traditional herbal drinks) and other herbal preparations are made is a cultural and educational experience. You are not required to taste or consume any preparation!"],
+      images: [{ src: "/images/article-5/gut-health.gif", alt: "Gut health illustration" }],
+      imagesBeforeText: true,
+      table: {
+        headers: ["DO", "DON'T"],
+        rows: [
+          ["✅ Observe the process and ask whether tasting is optional.", "❌ Do not taste unidentified plants, roots, leaves, powders, liquids, or herbal mixtures."],
+          ["✅ If you wish to taste, ask about the ingredients and make sure it is served with clean utensils.", "❌ Avoid products stored uncovered or prepared and stored under unclear conditions."],
+          ["✅ Tell the host about any allergies or dietary restrictions before tasting.", "❌ Do not assume that natural ingredients are always safe or that jamu can replace prescribed medication."],
+        ],
+      },
+      subsections: [
+        {
+          heading: "⚠ Remember:",
+          paragraphs: ["Pregnant or breastfeeding visitors, people with allergies or chronic conditions, and those taking regular medication should avoid trying herbal preparations unless they have checked with a healthcare professional. Herbal products can cause allergic reactions or interact with medicines."],
+        },
+      ],
+    },
+    {
+      heading: "4. Keep Your Hands Clean",
+      paragraphs: [],
+      images: [{ src: "/images/article-5/handwashing.gif", alt: "Handwashing illustration" }],
+      imagesBeforeText: true,
+      table: {
+        headers: ["WASH WITH SOAP AND RUNNING WATER", "IF SOAP AND WATER ARE NOT AVAILABLE"],
+        rows: [[
+          "• Before eating or handling food\n• After using the toilet\n• After handling rubbish or touching animals\n• After batik activities\n• Whenever your hands are visibly dirty",
+          "• Use an alcohol-based hand sanitizer containing at least 60% alcohol.\n• Wash with soap and water as soon as possible, especially if your hands are visibly dirty or greasy.",
+        ]],
+      },
+      subsections: [
+        {
+          heading: "⚠ Remember:",
+          paragraphs: ["Hand sanitizer is not as effective as handwashing for removing some germs. Soap and running water remain the preferred option."],
+        },
+      ],
+    },
+    {
+      heading: "5. If You Feel Unwell",
+      paragraphs: ["Illness from contaminated food or water may cause symptoms during your visit or after you return home."],
+      images: [{ src: "/images/article-5/hospital-patient.gif", alt: "Hospital patient illustration" }],
+      imagesBeforeText: true,
+      table: {
+        headers: ["COMMON SYMPTOMS", "WARNING SIGNS — SEEK MEDICAL HELP IMMEDIATELY 📞"],
+        rows: [[
+          "• Diarrhea\n• Nausea or vomiting\n• Stomach cramps or pain\n• Fever\n• Feeling weak",
+          "• Bloody or black stools\n• High fever\n• Severe abdominal pain\n• Persistent vomiting\n• Inability to keep fluids down\n• Signs of severe dehydration\n• Sudden confusion\n• Fainting\n• Seizures",
+        ]],
+      },
+      subsections: [
+        {
+          heading: "⚠ What to Do?",
+          paragraphs: [],
+          bullets: [
+            "Stop the activity and inform your tour guide or companion.",
+            "Rest in a cool, shaded place and drink small amounts of safe fluids frequently.",
+            "If you have diarrhea or vomiting, use oral rehydration salts (ORS) according to the packet instructions. Mix with the exact amount of safe water stated on the package.",
+            "Do not take antibiotics or anti-diarrheal medicines without appropriate medical advice, especially if you have bloody diarrhea or a high fever.",
+            "Do not delay seeking medical care if warning signs appear.",
+            "Young children, older adults, pregnant people, and people with weakened immune systems or chronic illnesses should seek medical advice earlier if symptoms develop.",
+          ],
+        },
+      ],
+    },
+    {
+      heading: "6. Your Quick Visitor Checklist:",
+      paragraphs: [],
+      images: [{ src: "/images/article-5/to-do-list.gif", alt: "To-do list illustration" }],
+      imagesBeforeText: true,
+      table: {
+        headers: ["BEFORE AND DURING YOUR VISIT, CHECK THAT:"],
+        rows: [
+          ["I have access to safe drinking water."],
+          ["I choose thoroughly cooked food served hot."],
+          ["I avoid ice or drinks from uncertain water sources."],
+          ["I clean my hands before eating and after using the toilet."],
+          ["I only taste jamu if its ingredients and preparation are clear."],
+          ["I know how to contact my tour guide if I feel unwell."],
+        ],
+      },
+      afterTable: ["EAT WELL. DRINK SAFE. KEEP HANDS CLEAN. ENJOY RESONEGARAN!"],
+    },
+    {
+      heading: "References",
+      paragraphs: [],
+      bullets: [
+        "[1] Chard AN, Hill V. Food and Water Precautions for Travelers. In: Halsey ES, Angelo KM, Barnett ED, et al., editors. CDC Yellow Book 2026: Health Information for International Travel [Internet]. Atlanta (GA): Centers for Disease Control and Prevention; 2025 Apr 23. Available from:[ https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/food-and-water-precautions-for-travelers.html](https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/food-and-water-precautions-for-travelers.html)",
+        "[2] Centers for Disease Control and Prevention. Avoid Contaminated Water During Travel [Internet]. Available from:[ https://wwwnc.cdc.gov/travel/page/water-disinfection](https://wwwnc.cdc.gov/travel/page/water-disinfection)",
+        "[3] Centers for Disease Control and Prevention. About Water Treatment Options When Hiking, Camping, or Traveling [Internet]. Reviewed 2026 Nov 10. Available from:[ https://www.cdc.gov/drinking-water/prevention/water-treatment-hiking-camping-traveling.html](https://www.cdc.gov/drinking-water/prevention/water-treatment-hiking-camping-traveling.html)",
+        "[4] Centers for Disease Control and Prevention. Food and Drink Considerations When Traveling [Internet]. Reviewed 2026 Jan 6. Available from:[ https://wwwnc.cdc.gov/travel/page/food-water-safety](https://wwwnc.cdc.gov/travel/page/food-water-safety)",
+      ],
+    },
+  ],
+}
+
 export const blogs = defineContent({
   en: {
     kicker: "FIELD NOTES FROM TERBAN",
@@ -443,6 +759,8 @@ export const blogs = defineContent({
       travelHealthKitPost,
       avoidingBitesPost,
       vaccinationGuidePost,
+      sunProtectionPost,
+      safeFoodWaterPost,
     ],
     readStory: "Read the story",
     signoffEyebrow: "A COMMUNITY-ROOTED VISIT",
@@ -528,6 +846,8 @@ export const blogs = defineContent({
       travelHealthKitPost,
       avoidingBitesPost,
       vaccinationGuidePost,
+      sunProtectionPost,
+      safeFoodWaterPost,
     ],
     readStory: "Baca ceritanya",
     signoffEyebrow: "KUNJUNGAN BERBASIS MASYARAKAT",

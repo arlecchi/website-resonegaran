@@ -15,7 +15,7 @@ export function BlogCards({ posts, readStory }: { posts: BlogPost[]; readStory: 
       {posts.map((post, index) => (
         <article className={`blog-card blog-${index + 1}`} key={post.slug}>
           <Link className="blog-card-link" href={`/blogs/${post.slug}`} aria-label={`${readStory}: ${post.title}`}>
-            <div className={post.slug === "avoiding-insect-and-arthropod-bites-indonesia" ? "blog-image blog-image-bug" : "blog-image"} role="img" aria-label={post.imageAlt} style={{ backgroundImage: `url(${imageUrl(post.image)})` }}>
+            <div className={post.slug === "avoiding-insect-and-arthropod-bites-indonesia" ? "blog-image blog-image-bug" : post.slug === "around-the-table-safe-food-water" ? "blog-image blog-image-food" : "blog-image"} role="img" aria-label={post.imageAlt} style={{ backgroundImage: `url(${imageUrl(post.image)})` }}>
               <span>{post.category}</span>
             </div>
             {post.date && <div className="blog-meta"><span>{post.date}</span></div>}
