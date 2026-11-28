@@ -814,6 +814,83 @@ const safeFoodWaterPostId = localizedPost(safeFoodWaterPost, {
   { heading: "Referensi", bullets: ["1. Chard AN, Hill V. Food and Water Precautions for Travelers. CDC Yellow Book 2026. https://www.cdc.gov/yellow-book/hcp/preparing-international-travelers/food-and-water-precautions-for-travelers.html", "2. Centers for Disease Control and Prevention. Avoid Contaminated Water During Travel. https://wwwnc.cdc.gov/travel/page/water-disinfection", "3. Centers for Disease Control and Prevention. About Water Treatment Options When Hiking, Camping, or Traveling. https://www.cdc.gov/drinking-water/prevention/water-treatment-hiking-camping-traveling.html", "4. Centers for Disease Control and Prevention. Food and Drink Considerations When Traveling. https://wwwnc.cdc.gov/travel/page/food-water-safety"] },
 ])
 
+const wellnessWithinWalkingDistancePost = {
+  slug: "wellness-within-walking-distance-terban",
+  category: "COMMUNITY & WELLNESS",
+  title: "Wellness Within Walking Distance",
+  date: "NOV 28, 2026 · MIMI",
+  image: "/images/blog-covers/terban-wellness.jpg",
+  imageAlt: "A calm wellness arrangement with spa stones, flowers, and a candle",
+  excerpt: "Why Terban Makes It Easy to Move",
+  deck: "Why Terban Makes It Easy to Move",
+  intro: "Most of us know we should move more. The harder part is actually doing it between lectures, deadlines, shifts and the commute home. In Terban, that part gets a little easier: you can find a yoga mat or a reformer within a short walk or ride of the kampung. This piece covers why regular movement matters, what yoga and pilates can do for your body and mind, and why nearby places to exercise make such a difference.",
+  sections: [
+    {
+      heading: "Why moving matters",
+      paragraphs: [
+        "The World Health Organization recommends that adults get at least 150 to 300 minutes of moderate aerobic activity a week, or the vigorous equivalent. That works out to roughly 30 minutes a day, five days a week. Yet about 31% of adults worldwide, and 80% of adolescents, do not reach that level.",
+        "The payoff for those who do is well documented. Regular activity lowers the risk of heart disease, type 2 diabetes and several cancers, and it reduces symptoms of depression and anxiety. It also helps with thinking, learning and overall wellbeing.",
+        "The good news is that the bar is lower than people think. WHO's own message is that any amount of activity is better than none, and that all of it counts: a walk to campus, a bike ride to the market, or an hour on the mat.",
+      ],
+    },
+    {
+      heading: "Why yoga and pilates in particular",
+      paragraphs: ["Yoga and pilates are low-impact, beginner-friendly and easy to scale, which makes them a good entry point for people who don't enjoy the gym. Both also have a growing research base behind them."],
+      emphasizeBulletLead: true,
+      bullets: [
+        "Back pain. Lower back pain is one of the most common complaints among people who sit for long hours. A 2013 meta-analysis of ten randomised trials concluded that yoga can be recommended as an additional therapy for chronic low back pain. A 2023 meta-analysis of 19 trials found that pilates may relieve pain and improve function in the same group.",
+        "Core strength. A 2023 systematic review found emerging evidence that pilates improves core muscle strength in people with chronic low back pain.",
+        "Stress. A 2024 meta-analysis found that yoga reduced stress in stressed adults in the short term, though the authors rated the quality of evidence as low.",
+      ],
+      afterTable: ["Most of these studies looked at people who already had back pain or high stress, so the results don't promise the same effect for everyone. Even so, they are a fair reason to give a class a try."],
+    },
+    {
+      heading: "Why it matters that the spots are close",
+      paragraphs: [
+        "Motivation gets most of the attention, but distance quietly decides a lot. If the nearest studio is a 40-minute ride away in traffic, skipping a session becomes the easy choice.",
+        "Research backs this up. A review prepared for the UK's National Institute for Health and Care Excellence found reasonably consistent links between adults' physical activity and convenient, nearby access to places to be active. A 2022 meta-analysis found that objectively measured access to recreational and fitness facilities had a significant effect on how active adults were. A 2022 review of reviews likewise listed shorter distances to, and better access to, places among the factors that support activity.",
+        "The effect isn't huge, and access alone won't turn someone into a regular. What it does is remove one of the most common excuses.",
+      ],
+    },
+    {
+      heading: "Terban has the spots, close by",
+      paragraphs: [
+        "Terban sits between UGM, Kotabaru and Samirono, and that location gives it something many neighbourhoods lack: nine yoga, pilates and fitness studios within a short walk or ride. Whether you want a women-only circuit class, a hot mat session or a private reformer lesson, there is likely an option nearby.",
+        "Prices and schedules change, so check each studio's Instagram or WhatsApp before you go.",
+      ],
+    },
+    {
+      heading: "Getting started",
+      bullets: [
+        "Pick one class, not a plan. Book a single beginner session this week and see how it feels.",
+        "Walk or cycle there. The trip itself counts toward your weekly minutes.",
+        "Bring a friend. People are more likely to keep going when someone they know goes with them.",
+        "Aim for consistency, not intensity. Two or three sessions a week, kept up for months, does more than one exhausting week.",
+      ],
+    },
+    {
+      heading: "Make a day of it",
+      paragraphs: ["While you're in the area, stay a little longer and explore Kampung Wisata Terban. Follow @kastaraya on Instagram, TikTok and YouTube for more local spots, or find all our links at linktr.ee/kamwisterbanjogja."],
+    },
+    {
+      heading: "References",
+      bullets: [
+        "World Health Organization. [WHO guidelines on physical activity and sedentary behaviour: at a glance](https://www.who.int/europe/publications/i/item/9789240014886) (2020).",
+        "World Health Organization. [Physical activity fact sheet](https://www.who.int/News-Room/Fact-Sheets/Detail/Physical-Activity).",
+        "Cramer H. et al. [A systematic review and meta-analysis of yoga for low back pain](https://pubmed.ncbi.nlm.nih.gov/23246998/). Clin J Pain (2013).",
+        "Yu Z. et al. [Efficacy of Pilates on pain, functional disorders and quality of life in patients with chronic low back pain](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9956295/). IJERPH (2023).",
+        "Franks J., Thwaites C., Morris M. E. [Pilates to improve core muscle activation in chronic low back pain](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC10218154/). Healthcare (2023).",
+        "[Effects of yoga on stress in stressed adults: a systematic review and meta-analysis](https://pmc.ncbi.nlm.nih.gov/articles/PMC11563964/). Frontiers in Psychiatry (2024).",
+        "Bauman A. E., Bull F. C. [Environmental correlates of physical activity and walking in adults and children: a review of reviews](https://nice.org.uk/guidance/ng90/evidence/environmental-correlates-of-physical-activity-review-pdf-4787281408). NICE (2007).",
+        "Menardo E. et al. [Exploring perceived and objective measures of the neighborhood environment and associations with physical activity among adults](https://pmc.ncbi.nlm.nih.gov/articles/PMC8909183/). (2022).",
+        "[Barriers and facilitators of domain-specific physical activity: a systematic review of reviews](https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-022-14385-1). BMC Public Health (2022).",
+      ],
+    },
+  ],
+}
+
+const wellnessWithinWalkingDistancePostId = wellnessWithinWalkingDistancePost
+
 export const blogs = defineContent({
   en: {
     kicker: "FIELD NOTES FROM TERBAN",
@@ -829,6 +906,7 @@ export const blogs = defineContent({
       vaccinationGuidePost,
       sunProtectionPost,
       safeFoodWaterPost,
+      wellnessWithinWalkingDistancePost,
     ],
     readStory: "Read the story",
     signoffEyebrow: "A COMMUNITY-ROOTED VISIT",
@@ -850,6 +928,7 @@ export const blogs = defineContent({
       vaccinationGuidePostId,
       sunProtectionPostId,
       safeFoodWaterPostId,
+      wellnessWithinWalkingDistancePostId,
     ],
     readStory: "Baca ceritanya",
     signoffEyebrow: "KUNJUNGAN BERBASIS MASYARAKAT",

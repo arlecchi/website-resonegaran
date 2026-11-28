@@ -61,7 +61,7 @@ export function BlogArticle({ slug }: { slug: string }) {
             <section className="article-section" key={`${section.heading}-${index}`}>
               <h2>{section.heading}</h2>
               {"imagesBeforeText" in section && section.imagesBeforeText && "images" in section && section.images?.map((image, imageIndex) => <ArticleImage key={`before-${imageIndex}`} image={image}/>) }
-              {section.paragraphs.map((paragraph, paragraphIndex) => renderParagraph(paragraph, index, paragraphIndex, "checkableParagraph" in section && section.checkableParagraph === true))}
+              {(section.paragraphs ?? []).map((paragraph, paragraphIndex) => renderParagraph(paragraph, index, paragraphIndex, "checkableParagraph" in section && section.checkableParagraph === true))}
               {!("imagesBeforeText" in section && section.imagesBeforeText) && "images" in section && section.images?.map((image, imageIndex) => <ArticleImage key={imageIndex} image={image}/>) }
               {"beforeTableBullets" in section && section.beforeTableBullets && <ul className="article-bullets">{section.beforeTableBullets.map((bullet, bulletIndex) => <li key={bulletIndex}><LinkedParagraph text={bullet}/></li>)}</ul>}
               {"table" in section && section.table && (
